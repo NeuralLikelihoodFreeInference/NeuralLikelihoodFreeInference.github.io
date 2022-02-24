@@ -3,35 +3,61 @@ layout: default
 ---
 
 <div class="row">
+<!--  <span class="selector">-->
+<!--    <span>Select Categories: </span>-->
+<!--    <select id="tagselection" class="selectpicker" multiple data-live-search="true">-->
+<!--      <option>application</option>-->
+<!--	<option>blog</option>-->
+<!--	<option>classics</option>-->
+<!--	<option>code</option>-->
+<!--	<option>methodology</option>-->
+<!--	<option>optimal transport</option>-->
+<!--	<option>performance</option>-->
+<!--	<option>theory</option>-->
+<!--	<option>variational</option>-->
+<!--    </select>-->
+<!--  </span>-->
   <span class="selector">
-    <span>Select Categories: </span>
-    <select id="tagselection" class="selectpicker" multiple data-live-search="true">
-      <option>application</option>
-<option>blog</option>
-<option>classics</option>
-<option>code</option>
-<option>methodology</option>
-<option>optimal transport</option>
-<option>performance</option>
-<option>theory</option>
-<option>variational</option>
+    <span>Target: </span>
+    <select id="targetselection" class="selectpicker" multiple data-live-search="true">
+      <option>likelihood</option>
+      <option>posterior</option>
+      <option>joint</option>
+      <option>both</option>
     </select>
   </span>
   <span class="selector">
-    <span>Select Authors: </span>
+    <span>Sequential/amortized: </span>
+    <select id="seqamselection" class="selectpicker" multiple data-live-search="true">
+      <option>sequential</option>
+      <option>amortized</option>
+    </select>
+  </span>
+  <span class="selector">
+    <span>Neural Network: </span>
+    <select id="nnselection" class="selectpicker" multiple data-live-search="true">
+      <option>normalizing-flows</option>
+      <option>generative</option>
+      <option>feed-forward</option>
+    </select>
+  </span>
+  <span class="selector">
+    <span>Authors: </span>
     <select id="authorselection" class="selectpicker" multiple data-live-search="true">
       <option>George Papamakarios</option>
       <option>Iain Murray</option>
     </select>
   </span>
   <div class="selector">
-    <span>Select Year: </span>
+    <span>Year: </span>
     <select id="yearselection" class="selectpicker" multiple data-live-search="true">
-      <option>2016</option>
-      <option>2019</option>
-<option>2020</option>
-<option>2021</option>
-<option>2022</option>
+        <option>2016</option>
+        <option>2017</option>
+        <option>2018</option>
+        <option>2019</option>
+		<option>2020</option>
+		<option>2021</option>
+		<option>2022</option>
     </select>
   </div>
 </div>
@@ -53,7 +79,12 @@ layout: default
 		<div id="bloc2">
          <span class="dates"> May 20, 2016 </span>
          <span class="authors"> George Papamakarios, Iain Murray </span>
-		</div>  
+		</div>
+<!--		<div class="row">-->
+<!--		<span class="target"> 			  likelihood 		  </span>-->
+<!--		  <span class="seq_am"> 			  amortized 		  </span>-->
+<!--		  <span class="nn"> 			  normalising flows       </span>-->
+<!--		</div>-->
 </div>
 
 	  </div>
@@ -77,10 +108,10 @@ layout: default
 	  <div class="column1" >
 	  </div>
 	  <div class="column2">
-		  <div class="tags">
-			  methodology, code
-		  </div>
-		  
+		<span class="target"> 			  likelihood 		  </span>
+		  <span class="seq_am"> 			  amortized 		  </span>
+		  <span class="nn"> 			  normalizing-flows       </span>
+
 	  </div>
 	</div>
 
@@ -92,6 +123,7 @@ layout: default
 </div>
 <!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
 
+ <hr/>
 
 
   <script src="https://utteranc.es/client.js"
@@ -134,7 +166,7 @@ $('#authorselection').change(function (e) {
 	var tags_selected = $(this).val();
    	for (let i = 0; i < items.length; i++) {
 	     var tag_items = items[i].getElementsByClassName("authors")[0];
-	     var item_tags = tag_items.textContent.trim().split(','); 
+	     var item_tags = tag_items.textContent.trim().split(',');
 	     item_tags =  item_tags.map(v => v.replace("\n", '').replace("\t", '').trim());
       	      const found = item_tags.some(r=> tags_selected.includes(r));
 	      if (found || tags_selected.length === 0) {
@@ -145,7 +177,7 @@ $('#authorselection').change(function (e) {
 		}
 	    }
 })
-	
+
 $('#tagselection').change(function (e) {
    	var items = document.getElementsByClassName('entry');
 	var tags_selected = $(this).val();
@@ -164,6 +196,65 @@ $('#tagselection').change(function (e) {
 		}
 	    }
 })
+
+$('#targetselection').change(function (e) {
+   	var items = document.getElementsByClassName('entry');
+	var tags_selected = $(this).val();
+   	for (let i = 0; i < items.length; i++) {
+	     var tag_items = items[i].getElementsByClassName("target")[0];
+	     var item_tags = tag_items.textContent.trim().split(',');
+	     item_tags =  item_tags.map(v => v.replace("\n", '').replace("\t", '').trim());
+	      console.log("item tags");
+	      console.log(item_tags);
+      	      const found = item_tags.some(r=> tags_selected.includes(r));
+	      if (found || tags_selected.length === 0) {
+		items[i].style.display  = 'unset';
+	      }
+		else {
+		items[i].style.display  = 'none';
+		}
+	    }
+})
+
+$('#nnselection').change(function (e) {
+   	var items = document.getElementsByClassName('entry');
+	var tags_selected = $(this).val();
+   	for (let i = 0; i < items.length; i++) {
+	     var tag_items = items[i].getElementsByClassName("nn")[0];
+	     var item_tags = tag_items.textContent.trim().split(',');
+	     item_tags =  item_tags.map(v => v.replace("\n", '').replace("\t", '').trim());
+	      console.log("item tags");
+	      console.log(item_tags);
+      	      const found = item_tags.some(r=> tags_selected.includes(r));
+	      if (found || tags_selected.length === 0) {
+		items[i].style.display  = 'unset';
+	      }
+		else {
+		items[i].style.display  = 'none';
+		}
+	    }
+})
+
+$('#seqamselection').change(function (e) {
+   	var items = document.getElementsByClassName('entry');
+	var tags_selected = $(this).val();
+   	for (let i = 0; i < items.length; i++) {
+	     var tag_items = items[i].getElementsByClassName("seq_am")[0];
+	     var item_tags = tag_items.textContent.trim().split(',');
+	     item_tags =  item_tags.map(v => v.replace("\n", '').replace("\t", '').trim());
+	      console.log("item tags");
+	      console.log(item_tags);
+      	      const found = item_tags.some(r=> tags_selected.includes(r));
+	      if (found || tags_selected.length === 0) {
+		items[i].style.display  = 'unset';
+	      }
+		else {
+		items[i].style.display  = 'none';
+		}
+	    }
+})
+
+
 </script>
 
 

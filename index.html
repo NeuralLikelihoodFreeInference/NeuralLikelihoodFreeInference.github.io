@@ -22,8 +22,6 @@ layout: default
     <select id="targetselection" class="selectpicker" multiple data-live-search="true">
       <option>likelihood</option>
       <option>posterior</option>
-      <option>joint</option>
-      <option>both</option>
     </select>
   </span>
   <span class="selector">
@@ -64,7 +62,8 @@ layout: default
 
 {% assign id = 0 %}
  <hr/>
- 
+
+
 
 <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
 {% assign id = id | plus:1 %}
@@ -74,18 +73,6 @@ layout: default
 {% capture x %}
 ## Fast epsilon-free Inference of Simulation Models with Bayesian Conditional Density Estimation
 {% endcapture %}{{ x | markdownify }}
-
-<div id="block_container">
-		<div id="bloc2">
-         <span class="dates"> May 20, 2016 </span>
-         <span class="authors"> George Papamakarios, Iain Murray </span>
-		</div>
-<!--		<div class="row">-->
-<!--		<span class="target"> 			  likelihood 		  </span>-->
-<!--		  <span class="seq_am"> 			  amortized 		  </span>-->
-<!--		  <span class="nn"> 			  normalising flows       </span>-->
-<!--		</div>-->
-</div>
 
 	  </div>
 	  <div class="column2" >
@@ -105,14 +92,72 @@ layout: default
 	  </div>
 	</div>
 	<div class="row">
+<!--    <div class="column1" id="block_container">-->
+		<div id="bloc2">
+         <span class="dates"> May 20, 2016 </span>
+         <span class="authors"> George Papamakarios, Iain Murray </span>
+		</div>
+<!--</div>-->
+<!--	  <div class="column1">-->
+		<div id="bloc1">
+          <span class="nn"> 			  normalizing-flows       </span>
+          <span class="target"> 			  likelihood, posterior 		  </span>
+          <span class="seq_am"> 			  amortized 		  </span>
+        </div>
+<!--	  </div>-->
+	</div>
+
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+ * [Code](https://github.com/)
+{% endcapture %}{{ x | markdownify }}
+</div>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+
+ <hr/>
+
+
+<!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
 	  <div class="column1" >
-	  </div>
-	  <div class="column2">
-		<span class="target"> 			  likelihood 		  </span>
-		  <span class="seq_am"> 			  amortized 		  </span>
-		  <span class="nn"> 			  normalizing-flows       </span>
+{% capture x %}
+## Fast epsilon-free Inference of Simulation Models with Bayesian Conditional Density Estimation
+{% endcapture %}{{ x | markdownify }}
 
 	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+		<a href="https://arxiv.org/abs/1605.06376" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+<!--    <div class="column1" id="block_container">-->
+		<div id="bloc2">
+         <span class="dates"> May 20, 2016 </span>
+         <span class="authors"> George Papamakarios, Iain Murray </span>
+		</div>
+<!--</div>-->
+<!--	  <div class="column1">-->
+		<div id="bloc1">
+          <span class="nn"> 			  normalizing-flows       </span>
+          <span class="target"> 			  likelihood, posterior 		  </span>
+          <span class="seq_am"> 			  amortized 		  </span>
+        </div>
+<!--	  </div>-->
 	</div>
 
 <div class="collapse" id="collapse{{ id }}">

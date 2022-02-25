@@ -349,22 +349,29 @@ footer {
 .authors {
 	font-size: 12px;
 	padding: 5px;
+	padding-right: 60px;
     	border-left: solid #0096FF;
+    	border-right: solid #2AA198;
 }
 
 .target {
 	font-size: 12px;
-	padding: 5px;
+    font-style: italic;
+	padding: 30px;
 }
 
 .seq_am {
 	font-size: 12px;
-	padding: 5px;
+    font-style: italic;
+	padding: 30px;
 }
 
 .nn {
 	font-size: 12px;
-	padding: 5px;
+    font-style: italic;
+	padding: 30px;
+	padding-left: 60px;
+    	//border-left: solid #2AA198;
 }
 
 

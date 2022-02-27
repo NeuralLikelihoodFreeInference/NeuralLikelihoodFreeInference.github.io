@@ -81,7 +81,7 @@ a {
 
 ul, ol {
   margin: 15px 0;
-  padding-left: 30px;
+  padding-right: 30px;
 }
 
 ul {
@@ -351,26 +351,43 @@ footer {
 	padding: 5px;
 	padding-right: 60px;
     	border-left: solid #0096FF;
-    	border-right: solid #2AA198;
+}
+
+.label {
+  font-size: 12px;
+  padding: 0px;
+  padding-left: 30px;
+  border-left: solid #2AA198;
+}
+
+
+.label_first {
+  font-size: 12px;
+  padding: 0px;
 }
 
 .target {
-	font-size: 12px;
-    font-style: italic;
-	padding: 30px;
+  font-size: 12px;
+  font-style: italic;
+  padding-right: 30px;
 }
 
 .seq_am {
 	font-size: 12px;
     font-style: italic;
-	padding: 30px;
+	padding-right: 30px;
 }
 
 .nn {
 	font-size: 12px;
     font-style: italic;
-	padding: 30px;
-	padding-left: 60px;
+	padding-right: 30px;
+    	//border-left: solid #2AA198;
+}
+.samples {
+	font-size: 12px;
+    font-style: italic;
+	padding-right: 30px;
     	//border-left: solid #2AA198;
 }
 

@@ -18,28 +18,6 @@ layout: default
 <!--    </select>-->
 <!--  </span>-->
   <span class="selector">
-    <span>Target: </span>
-    <select id="targetselection" class="selectpicker" multiple data-live-search="true">
-      <option>likelihood</option>
-      <option>posterior</option>
-    </select>
-  </span>
-  <span class="selector">
-    <span>Sequential/amortized: </span>
-    <select id="seqamselection" class="selectpicker" multiple data-live-search="true">
-      <option>sequential</option>
-      <option>amortized</option>
-    </select>
-  </span>
-  <span class="selector">
-    <span>Neural Network: </span>
-    <select id="nnselection" class="selectpicker" multiple data-live-search="true">
-      <option>normalizing-flows</option>
-      <option>generative</option>
-      <option>feed-forward</option>
-    </select>
-  </span>
-  <span class="selector">
     <span>Authors: </span>
     <select id="authorselection" class="selectpicker" multiple data-live-search="true">
       <option>George Papamakarios</option>
@@ -58,66 +36,42 @@ layout: default
 		<option>2022</option>
     </select>
   </div>
+  <span class="selector">
+    <span>Target: </span>
+    <select id="targetselection" class="selectpicker" multiple data-live-search="true">
+      <option>likelihood</option>
+      <option>posterior</option>
+    </select>
+  </span>
+  <span class="selector">
+    <span>Neural Network: </span>
+    <select id="nnselection" class="selectpicker" multiple data-live-search="true">
+      <option>normalizing-flows</option>
+      <option>generative</option>
+      <option>feed-forward</option>
+    </select>
+  </span>
+  <span class="selector">
+    <span>Samples: </span>
+    <select id="samplesselection" class="selectpicker" multiple data-live-search="true">
+      <option>Direct</option>
+      <option>MCMC</option>
+    </select>
+  </span>
+  <span class="selector">
+    <span>Amortized: </span>
+    <select id="seqamselection" class="selectpicker" multiple data-live-search="true">
+      <option>yes</option>
+      <option>no</option>
+    </select>
+  </span>
+
 </div>
 
 {% assign id = 0 %}
  <hr/>
 
 
-
-<!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
-{% assign id = id | plus:1 %}
-<div class="entry">
-	<div class="row">
-	  <div class="column1" >
-{% capture x %}
-## Fast epsilon-free Inference of Simulation Models with Bayesian Conditional Density Estimation
-{% endcapture %}{{ x | markdownify }}
-
-	  </div>
-	  <div class="column2" >
-	    <div id="block_container">
-		<div id="bloc2">
-		<a href="https://arxiv.org/abs/1605.06376" target="_blank" class="btn btn-info" role="button"> Paper </a>
-		</div>  
-		<div id="bloc3">
-		     <p>
-		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
-				See More
-		      </button>
-		    </p>
-        
-		</div>  
-	     </div>
-	  </div>
-	</div>
-	<div class="row">
-<!--    <div class="column1" id="block_container">-->
-		<div id="bloc2">
-         <span class="dates"> May 20, 2016 </span>
-         <span class="authors"> George Papamakarios, Iain Murray </span>
-		</div>
-<!--</div>-->
-<!--	  <div class="column1">-->
-		<div id="bloc1">
-          <span class="nn"> 			  normalizing-flows       </span>
-          <span class="target"> 			  likelihood, posterior 		  </span>
-          <span class="seq_am"> 			  amortized 		  </span>
-        </div>
-<!--	  </div>-->
-	</div>
-
-<div class="collapse" id="collapse{{ id }}">
-{% capture x %}
- * [Code](https://github.com/)
-{% endcapture %}{{ x | markdownify }}
-</div>
-</div>
-<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
-
- <hr/>
-
-
 <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
 {% assign id = id | plus:1 %}
 <div class="entry">
@@ -152,17 +106,26 @@ layout: default
 		</div>
 <!--</div>-->
 <!--	  <div class="column1">-->
-		<div id="bloc1">
-          <span class="nn"> 			  normalizing-flows       </span>
-          <span class="target"> 			  likelihood, posterior 		  </span>
-          <span class="seq_am"> 			  amortized 		  </span>
-        </div>
 <!--	  </div>-->
 	</div>
 
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 			  likelihood 	 </span>
+	  	<span class="label">   Neural Network: 		  </span>
+		  <span class="nn"> 			  normalizing-flows    </span>
+	  	<span class="label">   Samples: 		  </span>
+		  <span class="samples"> 			  Direct       </span>
+	  	<span class="label">   Amortized: 		  </span>
+		  <span class="seq_am"> 			  Yes     </span>
+    	</div>
+	</div>
+
+
 <div class="collapse" id="collapse{{ id }}">
 {% capture x %}
- * [Code](https://github.com/)
+ * [Code](https://github.com/gpapamak/epsilon_free_inference)
 {% endcapture %}{{ x | markdownify }}
 </div>
 </div>
@@ -171,7 +134,7 @@ layout: default
  <hr/>
 
 
-  <script src="https://utteranc.es/client.js"
+<script src="https://utteranc.es/client.js"
         repo="NeuralLikelihoodFreeInference/NeuralLikelihoodFreeInference.github.io"
         issue-term="pathname"
         theme="github-light"
@@ -247,6 +210,25 @@ $('#targetselection').change(function (e) {
 	var tags_selected = $(this).val();
    	for (let i = 0; i < items.length; i++) {
 	     var tag_items = items[i].getElementsByClassName("target")[0];
+	     var item_tags = tag_items.textContent.trim().split(',');
+	     item_tags =  item_tags.map(v => v.replace("\n", '').replace("\t", '').trim());
+	      console.log("item tags");
+	      console.log(item_tags);
+      	      const found = item_tags.some(r=> tags_selected.includes(r));
+	      if (found || tags_selected.length === 0) {
+		items[i].style.display  = 'unset';
+	      }
+		else {
+		items[i].style.display  = 'none';
+		}
+	    }
+})
+
+$('#samplesselection').change(function (e) {
+   	var items = document.getElementsByClassName('entry');
+	var tags_selected = $(this).val();
+   	for (let i = 0; i < items.length; i++) {
+	     var tag_items = items[i].getElementsByClassName("samples")[0];
 	     var item_tags = tag_items.textContent.trim().split(',');
 	     item_tags =  item_tags.map(v => v.replace("\n", '').replace("\t", '').trim());
 	      console.log("item tags");

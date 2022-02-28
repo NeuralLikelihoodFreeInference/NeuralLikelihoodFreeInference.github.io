@@ -1,0 +1,232 @@
+import json
+from dateutil.parser import parse
+
+outfile_name = "index.html"
+
+# Opening JSON file
+f = open('entries.json')
+
+# returns JSON object as
+# a dictionary
+entries = json.load(f)
+
+years_list = []
+authors_list = []
+target_list = []
+nn_list = []
+samples_list = []
+sequential_list = []
+
+names = ["authors", "target", "nn", "samples", "sequential"]
+lists = [authors_list, target_list, nn_list, samples_list, sequential_list]
+
+# Iterating through the json and add things to the list
+for entry in entries:
+    # print(entry)
+
+    # extract unique elements in each field
+    for name, l in zip(names, lists):
+        if not isinstance(entry[name], list):
+            if entry[name] not in l: l.append(entry[name])
+        else:
+            for element in entry[name]:
+                if element not in l: l.append(element)
+
+    # extract dates:
+    year = parse(entry["date"]).year
+    if year not in years_list: years_list.append(year)
+
+authors_list = sorted(authors_list)  # sort it
+years_list = sorted(years_list)  # sort it
+
+# print(years_list)
+# print(authors_list)
+# print(target_list)
+# print(nn_list)
+# print(samples_list)
+# print(sequential_list)
+
+f_out = open(outfile_name, "w")
+
+# write the selectors to the html file:
+
+f_out.write(
+    '---\n'
+    'layout: default\n'
+    '---\n'
+)
+
+f_out.write(
+    '<div class="row">\n'
+    '  <span class="selector">\n'
+    '    <span>Authors: </span>\n'
+    '    <select id="authorselection" class="selectpicker" multiple data-live-search="true">\n'
+)
+
+for author in authors_list:
+    f_out.write(f'<option>{author}</option>\n')
+
+f_out.write(
+    '    </select>\n'
+    '  </span>\n'
+    '  <div class="selector">\n'
+    '    <span>Year: </span>\n'
+    '    <select id="yearselection" class="selectpicker" multiple data-live-search="true">\n'
+)
+for year in years_list:
+    f_out.write(f'<option>{year}</option>\n')
+f_out.write(
+    '    </select>\n'
+    '  </div>\n'
+    '  <span class="selector">\n'
+    '    <span>Target: </span>\n'
+    '    <select id="targetselection" class="selectpicker" multiple data-live-search="true">\n'
+)
+for target in target_list:
+    f_out.write(f'<option>{target}</option>\n')
+f_out.write(
+    '    </select>\n'
+    '  </span>\n'
+    '  <span class="selector">\n'
+    '    <span>Neural Network: </span>\n'
+    '    <select id="nnselection" class="selectpicker" multiple data-live-search="true">\n'
+)
+for nn in nn_list:
+    f_out.write(f'<option>{nn}</option>\n')
+f_out.write(
+    '    </select>\n'
+    '  </span>\n'
+    '  <span class="selector">\n'
+    '    <span>Samples: </span>\n'
+    '    <select id="samplesselection" class="selectpicker" multiple data-live-search="true">\n'
+)
+for sample in samples_list:
+    f_out.write(f'<option>{sample}</option>\n')
+f_out.write(
+    '</select>\n'
+    '  </span>\n'
+    '  <span class="selector">\n'
+    '    <span>Sequential: </span>\n'
+    '    <select id="seqamselection" class="selectpicker" multiple data-live-search="true">\n'
+)
+for amo in sequential_list:
+    f_out.write(f'<option>{amo}</option>\n')
+f_out.write(
+    '    </select>\n'
+    '  </span>\n'
+    '</div>\n'
+    '{% assign id = 0 %}\n'
+    ' <hr/>\n'
+)
+
+# add each entry now:
+
+for entry in entries:
+    f_out.write(
+        '        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->\n'
+        '{% assign id = id | plus:1 %}\n'
+        '<div class="entry">\n'
+        '	<div class="row">\n'
+        '	  <div class="column1" >\n'
+        '{% capture x %}\n'
+    )
+    f_out.write(f'## {entry["title"]}')
+    f_out.write(
+        '    {% endcapture %}{{ x | markdownify }}\n'
+        '	  </div>\n'
+        '	  <div class="column2" >\n'
+        '	    <div id="block_container">\n'
+        '		<div id="bloc2">\n'
+    )
+    f_out.write(f' 		<a href="{entry["link"]}" target="_blank" class="btn btn-info" role="button"> Paper </a>\n')
+    f_out.write(
+        '		</div>\n'
+        '		<div id="bloc3">\n'
+        '		     <p>\n'
+        '		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">\n'
+        '				See More\n'
+        '		      </button>\n'
+        '		    </p>\n'
+        '		</div>\n'
+        '	     </div>\n'
+        '	  </div>\n'
+        '	</div>\n'
+        '	<div class="row">\n'
+        '<!--    <div class="column1" id="block_container">-->\n'
+        '		<div id="bloc2">\n'
+    )
+    f_out.write(f'          <span class="dates"> {entry["date"]} </span>\n')
+
+    authors_list_string = ''
+    for i in range(len(entry["authors"]) - 1):
+        authors_list_string += f'{entry["authors"][i]}, '
+    authors_list_string += f'{entry["authors"][-1]}'
+
+    f_out.write(f'          <span class="authors"> {authors_list_string} </span>\n')
+    f_out.write(
+        '    		</div>\n'
+        '<!--</div>-->\n'
+        '<!--	  <div class="column1">-->\n'
+        '<!--	  </div>-->\n'
+        '	</div>\n'
+        '    <div class="row">\n'
+        '		<div id="bloc2">\n'
+        '	  	<span class="label_first">   Target: 		  </span>\n'
+    )
+
+    target_list_string = ''
+    if not isinstance(entry["target"], list):
+        entry["target"] = [entry["target"]]
+    for i in range(len(entry["target"]) - 1):
+        target_list_string += f'{entry["target"][i]}, '
+    target_list_string += f'{entry["target"][-1]}'
+
+    f_out.write(f'        <span class="target"> 		{target_list_string} 	 </span>\n')
+    f_out.write('  	<span class="label">   Neural Network: 		  </span>')
+
+    nn_list_string = ''
+    if not isinstance(entry["nn"], list):
+        entry["nn"] = [entry["nn"]]
+    for i in range(len(entry["nn"]) - 1):
+        nn_list_string += f'{entry["nn"][i]}, '
+    nn_list_string += f'{entry["nn"][-1]}'
+
+    f_out.write(f'        <span class="nn"> 		{nn_list_string} 	 </span>\n')
+    f_out.write('  	<span class="label">   Samples: 		  </span>')
+
+    samples_list_string = ''
+    if not isinstance(entry["samples"], list):
+        entry["samples"] = [entry["samples"]]
+    for i in range(len(entry["samples"]) - 1):
+        samples_list_string += f'{entry["samples"][i]}, '
+    samples_list_string += f'{entry["samples"][-1]}'
+
+    f_out.write(f'        <span class="nn"> 		{samples_list_string} 	 </span>\n')
+    f_out.write('  	<span class="label">   Sequential: 		  </span>')
+    sequential_list_string = ''
+    if not isinstance(entry["sequential"], list):
+        entry["sequential"] = [entry["sequential"]]
+    for i in range(len(entry["sequential"]) - 1):
+        sequential_list_string += f'{entry["sequential"][i]}, '
+    sequential_list_string += f'{entry["sequential"][-1]}'
+    f_out.write(f'        <span class="seq_am"> 		{sequential_list_string} 	 </span>\n')
+    f_out.write(
+        '    	</div>\n'
+        '	</div>\n'
+        '<div class="collapse" id="collapse{{ id }}">\n'
+        '{% capture x %}\n'
+    )
+    if not isinstance(entry["other"], list):
+        entry["other"] = [entry["other"]]
+    for element in entry["other"]:
+        f_out.write('* ' + element + '\n')
+    f_out.write(
+        '{% endcapture %}{{ x | markdownify }}\n'
+        '</div>\n'
+        ' <hr/>\n'
+        '</div>\n'
+        '<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->\n'
+    )
+
+# Closing file
+f.close()

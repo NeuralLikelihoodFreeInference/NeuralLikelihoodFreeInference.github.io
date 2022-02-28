@@ -1,91 +1,82 @@
 ---
 layout: default
 ---
-
 <div class="row">
-<!--  <span class="selector">-->
-<!--    <span>Select Categories: </span>-->
-<!--    <select id="tagselection" class="selectpicker" multiple data-live-search="true">-->
-<!--      <option>application</option>-->
-<!--	<option>blog</option>-->
-<!--	<option>classics</option>-->
-<!--	<option>code</option>-->
-<!--	<option>methodology</option>-->
-<!--	<option>optimal transport</option>-->
-<!--	<option>performance</option>-->
-<!--	<option>theory</option>-->
-<!--	<option>variational</option>-->
-<!--    </select>-->
-<!--  </span>-->
   <span class="selector">
     <span>Authors: </span>
     <select id="authorselection" class="selectpicker" multiple data-live-search="true">
-      <option>George Papamakarios</option>
-      <option>Iain Murray</option>
+<option>Andreass Voss</option>
+<option>David C. Sterratt</option>
+<option>David Greenberg</option>
+<option>George Papamakarios</option>
+<option>Giacomo Bassetto</option>
+<option>Iain Murray</option>
+<option>Jakob H. Macke</option>
+<option>Jan-Matthis Lueckmann</option>
+<option>Kaan Öcal</option>
+<option>Lynton Ardizzone</option>
+<option>Marcel Nonnenmacher</option>
+<option>Pedro J. Gonçalves</option>
+<option>Stefan T. Radev</option>
+<option>Theofanis Karaletsos</option>
+<option>Ulf K. Mertens</option>
+<option>Ullrich Köthe</option>
     </select>
   </span>
   <div class="selector">
     <span>Year: </span>
     <select id="yearselection" class="selectpicker" multiple data-live-search="true">
-        <option>2016</option>
-        <option>2017</option>
-        <option>2018</option>
-        <option>2019</option>
-		<option>2020</option>
-		<option>2021</option>
-		<option>2022</option>
+<option>2016</option>
+<option>2017</option>
+<option>2018</option>
+<option>2019</option>
+<option>2020</option>
     </select>
   </div>
   <span class="selector">
     <span>Target: </span>
     <select id="targetselection" class="selectpicker" multiple data-live-search="true">
-      <option>likelihood</option>
-      <option>posterior</option>
+<option>posterior</option>
+<option>likelihood</option>
     </select>
   </span>
   <span class="selector">
     <span>Neural Network: </span>
     <select id="nnselection" class="selectpicker" multiple data-live-search="true">
-      <option>normalizing-flows</option>
-      <option>generative</option>
-      <option>feed-forward</option>
+<option>mixture-density</option>
+<option>normalizing-flows</option>
+<option>deep-ensembles</option>
     </select>
   </span>
   <span class="selector">
     <span>Samples: </span>
     <select id="samplesselection" class="selectpicker" multiple data-live-search="true">
-      <option>Direct</option>
-      <option>MCMC</option>
-    </select>
+<option>direct</option>
+<option>MCMC</option>
+</select>
   </span>
   <span class="selector">
-    <span>Amortized: </span>
+    <span>Sequential: </span>
     <select id="seqamselection" class="selectpicker" multiple data-live-search="true">
-      <option>yes</option>
-      <option>no</option>
+<option>yes</option>
+<option>no</option>
     </select>
   </span>
-
 </div>
-
 {% assign id = 0 %}
  <hr/>
-
-
-<!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
 {% assign id = id | plus:1 %}
 <div class="entry">
 	<div class="row">
 	  <div class="column1" >
 {% capture x %}
-## Fast epsilon-free Inference of Simulation Models with Bayesian Conditional Density Estimation
-{% endcapture %}{{ x | markdownify }}
-
+## Fast epsilon-free Inference of Simulation Models with Bayesian Conditional Density Estimation    {% endcapture %}{{ x | markdownify }}
 	  </div>
 	  <div class="column2" >
 	    <div id="block_container">
 		<div id="bloc2">
-		<a href="https://arxiv.org/abs/1605.06376" target="_blank" class="btn btn-info" role="button"> Paper </a>
+ 		<a href="https://arxiv.org/abs/1605.06376" target="_blank" class="btn btn-info" role="button"> Paper </a>
 		</div>
 		<div id="bloc3">
 		     <p>
@@ -93,7 +84,6 @@ layout: default
 				See More
 		      </button>
 		    </p>
-
 		</div>
 	     </div>
 	  </div>
@@ -101,38 +91,279 @@ layout: default
 	<div class="row">
 <!--    <div class="column1" id="block_container">-->
 		<div id="bloc2">
-         <span class="dates"> May 20, 2016 </span>
-         <span class="authors"> George Papamakarios, Iain Murray </span>
-		</div>
+          <span class="dates"> May 20, 2016 </span>
+          <span class="authors"> George Papamakarios, Iain Murray </span>
+    		</div>
 <!--</div>-->
 <!--	  <div class="column1">-->
 <!--	  </div>-->
 	</div>
-
     <div class="row">
 		<div id="bloc2">
 	  	<span class="label_first">   Target: 		  </span>
-        <span class="target"> 			  likelihood 	 </span>
-	  	<span class="label">   Neural Network: 		  </span>
-		  <span class="nn"> 			  normalizing-flows    </span>
-	  	<span class="label">   Samples: 		  </span>
-		  <span class="samples"> 			  Direct       </span>
-	  	<span class="label">   Amortized: 		  </span>
-		  <span class="seq_am"> 			  Yes     </span>
+        <span class="target"> 		posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		mixture-density 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
     	</div>
 	</div>
-
-
 <div class="collapse" id="collapse{{ id }}">
 {% capture x %}
- * [Code](https://github.com/gpapamak/epsilon_free_inference)
+* [Code](https://github.com/gpapamak/epsilon_free_inference)
 {% endcapture %}{{ x | markdownify }}
 </div>
+ <hr/>
 </div>
 <!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
-
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Flexible statistical inference for mechanistic models of neural dynamics    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/1711.01861" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+<!--    <div class="column1" id="block_container">-->
+		<div id="bloc2">
+          <span class="dates"> November 6, 2017 </span>
+          <span class="authors"> Jan-Matthis Lueckmann, Pedro J. Gonçalves, Giacomo Bassetto, Kaan Öcal, Marcel Nonnenmacher, Jakob H. Macke </span>
+    		</div>
+<!--</div>-->
+<!--	  <div class="column1">-->
+<!--	  </div>-->
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/mackelab/delfi)
+{% endcapture %}{{ x | markdownify }}
+</div>
  <hr/>
-
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Automatic posterior transformation for likelihood-free inference    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/1905.07488" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+<!--    <div class="column1" id="block_container">-->
+		<div id="bloc2">
+          <span class="dates"> May 17, 2019 </span>
+          <span class="authors"> David Greenberg, Marcel Nonnenmacher, Jakob H. Macke </span>
+    		</div>
+<!--</div>-->
+<!--	  <div class="column1">-->
+<!--	  </div>-->
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/mackelab/delfi)
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Likelihood-free inference with emulator networks    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/1805.09294" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+<!--    <div class="column1" id="block_container">-->
+		<div id="bloc2">
+          <span class="dates"> May 23, 2018 </span>
+          <span class="authors"> Jan-Matthis Lueckmann, Giacomo Bassetto, Theofanis Karaletsos, Jakob H. Macke </span>
+    		</div>
+<!--</div>-->
+<!--	  <div class="column1">-->
+<!--	  </div>-->
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		likelihood 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		deep-ensembles 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		MCMC 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Sequential Neural Likelihood: Fast Likelihood-free Inference with Autoregressive Flows    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/1805.07226" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+<!--    <div class="column1" id="block_container">-->
+		<div id="bloc2">
+          <span class="dates"> May 18, 2018 </span>
+          <span class="authors"> George Papamakarios, David C. Sterratt, Iain Murray </span>
+    		</div>
+<!--</div>-->
+<!--	  <div class="column1">-->
+<!--	  </div>-->
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		likelihood 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		MCMC 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/gpapamak/snl)
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## BayesFlow: Learning complex stochastic models with invertible neural networks    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/2003.06281" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+<!--    <div class="column1" id="block_container">-->
+		<div id="bloc2">
+          <span class="dates"> March 13, 2020 </span>
+          <span class="authors"> Stefan T. Radev, Ulf K. Mertens, Andreass Voss, Lynton Ardizzone, Ullrich Köthe </span>
+    		</div>
+<!--</div>-->
+<!--	  <div class="column1">-->
+<!--	  </div>-->
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/stefanradev93/cINN)
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
 
 <script src="https://utteranc.es/client.js"
         repo="NeuralLikelihoodFreeInference/NeuralLikelihoodFreeInference.github.io"
@@ -147,7 +378,6 @@ layout: default
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 
-</div>
 
 <script>
 
@@ -156,7 +386,7 @@ $('#yearselection').change(function (e) {
 	var tags_selected = $(this).val();
    	for (let i = 0; i < items.length; i++) {
 	     var tag_items = items[i].getElementsByClassName("dates")[0];
-	     var year_tag = tag_items.textContent.trim().split(',')[1]; 
+	     var year_tag = tag_items.textContent.trim().split(',')[1];
        console.log(year_tag);
       	const found = tags_selected.some(r=> year_tag.includes(r));
 	      if (found || tags_selected.length === 0) {
@@ -191,7 +421,7 @@ $('#tagselection').change(function (e) {
 	var tags_selected = $(this).val();
    	for (let i = 0; i < items.length; i++) {
 	     var tag_items = items[i].getElementsByClassName("tags")[0];
-	     var item_tags = tag_items.textContent.trim().split(','); 
+	     var item_tags = tag_items.textContent.trim().split(',');
 	     item_tags =  item_tags.map(v => v.replace("\n", '').replace("\t", '').trim());
 	      console.log("item tags");
 	      console.log(item_tags);

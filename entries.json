@@ -1,0 +1,97 @@
+[
+  {
+    "authors": [
+      "George Papamakarios",
+      "Iain Murray"
+    ],
+    "title": "Fast epsilon-free Inference of Simulation Models with Bayesian Conditional Density Estimation",
+    "date": "May 20, 2016",
+    "target": "posterior",
+    "nn": "mixture-density",
+    "samples": "direct",
+    "sequential": "yes",
+    "other": "[Code](https://github.com/gpapamak/epsilon_free_inference)",
+    "link": "https://arxiv.org/abs/1605.06376"
+  },
+  {
+    "authors": [
+      "Jan-Matthis Lueckmann",
+      "Pedro J. Gonçalves",
+      "Giacomo Bassetto",
+      "Kaan Öcal",
+      "Marcel Nonnenmacher",
+      "Jakob H. Macke"
+    ],
+    "title": "Flexible statistical inference for mechanistic models of neural dynamics",
+    "date": "November 6, 2017",
+    "target": "posterior",
+    "nn": "normalizing-flows",
+    "samples": "direct",
+    "sequential": "yes",
+    "other": "[Code](https://github.com/mackelab/delfi)",
+    "link": "https://arxiv.org/abs/1711.01861"
+  },
+  {
+    "authors": [
+      "David Greenberg",
+      "Marcel Nonnenmacher",
+      "Jakob H. Macke"
+    ],
+    "title": "Automatic posterior transformation for likelihood-free inference",
+    "date": "May 17, 2019",
+    "target": "posterior",
+    "nn": "normalizing-flows",
+    "samples": "direct",
+    "sequential": "yes",
+    "other": "[Code](https://github.com/mackelab/delfi)",
+    "link": "https://arxiv.org/abs/1905.07488"
+  },
+  {
+    "authors": [
+      "Jan-Matthis Lueckmann",
+      "Giacomo Bassetto",
+      "Theofanis Karaletsos",
+      "Jakob H. Macke"
+    ],
+    "title": "Likelihood-free inference with emulator networks",
+    "date": "May 23, 2018",
+    "target": "likelihood",
+    "nn": "deep-ensembles",
+    "samples": "MCMC",
+    "sequential": "yes",
+    "other": [],
+    "link": "https://arxiv.org/abs/1805.09294"
+  },
+  {
+    "authors": [
+      "George Papamakarios",
+      "David C. Sterratt",
+      "Iain Murray"
+    ],
+    "title": "Sequential Neural Likelihood: Fast Likelihood-free Inference with Autoregressive Flows",
+    "date": "May 18, 2018",
+    "target": "likelihood",
+    "nn": "normalizing-flows",
+    "samples": "MCMC",
+    "sequential": "yes",
+    "other": "[Code](https://github.com/gpapamak/snl)",
+    "link": "https://arxiv.org/abs/1805.07226"
+  },
+  {
+    "authors": [
+      "Stefan T. Radev",
+      "Ulf K. Mertens",
+      "Andreass Voss",
+      "Lynton Ardizzone",
+      "Ullrich Köthe"
+    ],
+    "title": "BayesFlow: Learning complex stochastic models with invertible neural networks",
+    "date": "March 13, 2020",
+    "target": "posterior",
+    "nn": "normalizing-flows",
+    "samples": "direct",
+    "sequential": "no",
+    "other": "[Code](https://github.com/stefanradev93/cINN)",
+    "link": "https://arxiv.org/abs/2003.06281"
+  }
+]

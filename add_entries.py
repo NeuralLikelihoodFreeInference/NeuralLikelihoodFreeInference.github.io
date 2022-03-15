@@ -1,5 +1,6 @@
 import json
 from dateutil.parser import parse
+from datetime import datetime
 
 outfile_name = "index.html"
 
@@ -9,6 +10,7 @@ f = open('entries.json')
 # returns JSON object as a dictionary
 entries = json.load(f)
 
+# lists of unique items
 years_list = []
 authors_list = []
 target_list = []
@@ -19,7 +21,7 @@ sequential_list = []
 names = ["authors", "target", "nn", "samples", "sequential"]
 lists = [authors_list, target_list, nn_list, samples_list, sequential_list]
 
-# Iterating through the json and add things to the list
+# Iterating through the json and add things to lists of unique items
 for entry in entries:
     # print(entry)
 
@@ -44,6 +46,16 @@ years_list = sorted(years_list)  # sort it
 # print(nn_list)
 # print(samples_list)
 # print(sequential_list)
+
+# sort entries according to date:
+all_dates = [entry["date"] for entry in entries]
+sorted_zipped = sorted(zip(all_dates, entries), key=lambda x: parse(x[0]).date())
+# unzip:
+sorted_dates = [x[0] for x in sorted_zipped]
+entries = [x[1] for x in sorted_zipped]
+
+
+# --- START WRITING THINGS TO HTML ---
 
 f_out = open(outfile_name, "w")
 

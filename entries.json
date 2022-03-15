@@ -93,5 +93,69 @@
     "sequential": "no",
     "other": "[Code](https://github.com/stefanradev93/cINN)",
     "link": "https://arxiv.org/abs/2003.06281"
+  },
+  {
+    "authors": [
+      "Joeri Hermans",
+      "Volodimir Begy",
+      "Gilles Louppe"
+    ],
+    "title": "Likelihood-free MCMC with Amortized Approximate Ratio Estimators",
+    "date": "March 10, 2019",
+    "target": "likelihood-ratio",
+    "nn": "classifier-NN",
+    "samples": "MCMC",
+    "sequential": "no",
+    "other": "[Code](https://github.com/montefiore-ai/hypothesis)",
+    "link": "https://arxiv.org/abs/1903.04057"
+  },
+  {
+    "authors": [
+      "Lorenzo Pacchiardi",
+      "Ritabrata Dutta"
+    ],
+    "title": "Score Matched Neural Exponential Families for Likelihood-Free Inference",
+    "date": "December 20, 2020",
+    "target": "likelihood",
+    "nn": "any-NN",
+    "samples": "MCMC",
+    "sequential": "no",
+    "other": "[Code](https://github.com/LoryPack/SM-ExpFam-LFI)",
+    "link": "https://arxiv.org/abs/2012.10903"
+  },
+  {
+    "authors": [
+      "Samuel Wiqvist",
+      "Jes Frellsen",
+      "Umberto Picchini"
+    ],
+    "title": "Sequential Neural Posterior and Likelihood Approximation",
+    "date": "February 12, 2021",
+    "target": [
+      "likelihood",
+      "posterior"
+    ],
+    "nn": "normalizing-flows",
+    "samples": "direct",
+    "sequential": "yes",
+    "other": "[Code](https://github.com/SamuelWiqvist/snpla)",
+    "link": "https://arxiv.org/abs/2102.06522"
+  },
+  {
+    "authors": [
+      "Giulio Isacchini",
+      "Natanael Spisak",
+      "Armita Nourmohammad",
+      "Thierry Mora",
+      "Aleksandra M. Walczak"
+    ],
+    "title": "MINIMALIST: Mutual INformatIon Maximization for Amortized Likelihood Inference from Sampled Trajectories",
+    "date": "June 3, 2021",
+    "target": "likelihood-ratio",
+    "nn": "any-NN",
+    "samples": "MCMC",
+    "sequential": "no",
+    "other": "[Code](https://github.com/statbiophys/MINIMALIST)",
+    "link": "https://arxiv.org/abs/2106.01808"
   }
 ]

@@ -5,32 +5,46 @@ layout: default
   <span class="selector">
     <span>Authors: </span>
     <select id="authorselection" class="selectpicker" multiple data-live-search="true">
+<option>Aleksandra M. Walczak</option>
 <option>Andreass Voss</option>
+<option>Armita Nourmohammad</option>
 <option>David C. Sterratt</option>
 <option>David Greenberg</option>
 <option>George Papamakarios</option>
 <option>Giacomo Bassetto</option>
+<option>Gilles Louppe</option>
+<option>Giulio Isacchini</option>
 <option>Iain Murray</option>
 <option>Jakob H. Macke</option>
 <option>Jan-Matthis Lueckmann</option>
+<option>Jes Frellsen</option>
+<option>Joeri Hermans</option>
 <option>Kaan Öcal</option>
+<option>Lorenzo Pacchiardi</option>
 <option>Lynton Ardizzone</option>
 <option>Marcel Nonnenmacher</option>
+<option>Natanael Spisak</option>
 <option>Pedro J. Gonçalves</option>
+<option>Ritabrata Dutta</option>
+<option>Samuel Wiqvist</option>
 <option>Stefan T. Radev</option>
 <option>Theofanis Karaletsos</option>
+<option>Thierry Mora</option>
 <option>Ulf K. Mertens</option>
 <option>Ullrich Köthe</option>
+<option>Umberto Picchini</option>
+<option>Volodimir Begy</option>
     </select>
   </span>
   <div class="selector">
     <span>Year: </span>
     <select id="yearselection" class="selectpicker" multiple data-live-search="true">
-<option>1019</option>
 <option>2016</option>
 <option>2017</option>
 <option>2018</option>
+<option>2019</option>
 <option>2020</option>
+<option>2021</option>
     </select>
   </div>
   <span class="selector">
@@ -38,6 +52,7 @@ layout: default
     <select id="targetselection" class="selectpicker" multiple data-live-search="true">
 <option>posterior</option>
 <option>likelihood</option>
+<option>likelihood-ratio</option>
     </select>
   </span>
   <span class="selector">
@@ -46,6 +61,8 @@ layout: default
 <option>mixture-density</option>
 <option>normalizing-flows</option>
 <option>deep-ensembles</option>
+<option>classifier-NN</option>
+<option>any-NN</option>
     </select>
   </span>
   <span class="selector">
@@ -65,53 +82,6 @@ layout: default
 </div>
 {% assign id = 0 %}
  <hr/>
-        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
-{% assign id = id | plus:1 %}
-<div class="entry">
-	<div class="row">
-	  <div class="column1" >
-{% capture x %}
-## Automatic posterior transformation for likelihood-free inference
-    {% endcapture %}{{ x | markdownify }}
-	  </div>
-	  <div class="column2" >
-	    <div id="block_container">
-		<div id="bloc2">
- 		<a href="https://arxiv.org/abs/1905.07488" target="_blank" class="btn btn-info" role="button"> Paper </a>
-		</div>
-		<div id="bloc3">
-		     <p>
-		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
-				See More
-		      </button>
-		    </p>
-		</div>
-	     </div>
-	  </div>
-	</div>
-	<div class="row">
-		<div id="bloc2">
-          <span class="dates"> May 17, 1019 </span>
-          <span class="authors"> David Greenberg, Marcel Nonnenmacher, Jakob H. Macke </span>
-    		</div>
-	</div>
-    <div class="row">
-		<div id="bloc2">
-	  	<span class="label_first">   Target: 		  </span>
-        <span class="target"> 		posterior 	 </span>
-  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
-  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		direct 	 </span>
-  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
-    	</div>
-	</div>
-<div class="collapse" id="collapse{{ id }}">
-{% capture x %}
-* [Code](https://github.com/mackelab/delfi)
-{% endcapture %}{{ x | markdownify }}
-</div>
- <hr/>
-</div>
-<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
         <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
 {% assign id = id | plus:1 %}
 <div class="entry">
@@ -298,6 +268,100 @@ layout: default
 	<div class="row">
 	  <div class="column1" >
 {% capture x %}
+## Likelihood-free MCMC with Amortized Approximate Ratio Estimators
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/1903.04057" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> March 10, 2019 </span>
+          <span class="authors"> Joeri Hermans, Volodimir Begy, Gilles Louppe </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		likelihood-ratio 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		classifier-NN 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		MCMC 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/montefiore-ai/hypothesis)
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Automatic posterior transformation for likelihood-free inference
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/1905.07488" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> May 17, 2019 </span>
+          <span class="authors"> David Greenberg, Marcel Nonnenmacher, Jakob H. Macke </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/mackelab/delfi)
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
 ## BayesFlow: Learning complex stochastic models with invertible neural networks
     {% endcapture %}{{ x | markdownify }}
 	  </div>
@@ -334,6 +398,147 @@ layout: default
 <div class="collapse" id="collapse{{ id }}">
 {% capture x %}
 * [Code](https://github.com/stefanradev93/cINN)
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Score Matched Neural Exponential Families for Likelihood-Free Inference
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/2012.10903" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> December 20, 2020 </span>
+          <span class="authors"> Lorenzo Pacchiardi, Ritabrata Dutta </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		likelihood 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		any-NN 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		MCMC 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/LoryPack/SM-ExpFam-LFI)
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Sequential Neural Posterior and Likelihood Approximation
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/2102.06522" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> February 12, 2021 </span>
+          <span class="authors"> Samuel Wiqvist, Jes Frellsen, Umberto Picchini </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		likelihood, posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/SamuelWiqvist/snpla)
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## MINIMALIST: Mutual INformatIon Maximization for Amortized Likelihood Inference from Sampled Trajectories
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/2106.01808" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> June 3, 2021 </span>
+          <span class="authors"> Giulio Isacchini, Natanael Spisak, Armita Nourmohammad, Thierry Mora, Aleksandra M. Walczak </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		likelihood-ratio 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		any-NN 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		MCMC 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/statbiophys/MINIMALIST)
 {% endcapture %}{{ x | markdownify }}
 </div>
  <hr/>

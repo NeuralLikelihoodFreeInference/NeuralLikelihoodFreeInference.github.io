@@ -6,8 +6,7 @@ outfile_name = "index.html"
 # Opening JSON file
 f = open('entries.json')
 
-# returns JSON object as
-# a dictionary
+# returns JSON object as a dictionary
 entries = json.load(f)
 
 years_list = []
@@ -122,6 +121,11 @@ f_out.write(
 # add each entry now:
 
 for entry in entries:
+    # fix the "others" list: 
+    if not isinstance(entry["other"], list):
+        entry["other"] = [entry["other"]]
+    other_not_empty = len(entry["other"]) > 0
+
     f_out.write(
         '        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->\n'
         '{% assign id = id | plus:1 %}\n'
@@ -130,7 +134,7 @@ for entry in entries:
         '	  <div class="column1" >\n'
         '{% capture x %}\n'
     )
-    f_out.write(f'## {entry["title"]}')
+    f_out.write(f'## {entry["title"]}\n')
     f_out.write(
         '    {% endcapture %}{{ x | markdownify }}\n'
         '	  </div>\n'
@@ -143,16 +147,20 @@ for entry in entries:
         '		</div>\n'
         '		<div id="bloc3">\n'
         '		     <p>\n'
-        '		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">\n'
-        '				See More\n'
-        '		      </button>\n'
+    )
+    if other_not_empty:
+        f_out.write(
+            '		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">\n'
+            '				See More\n'
+            '		      </button>\n'
+        )
+    f_out.write(
         '		    </p>\n'
         '		</div>\n'
         '	     </div>\n'
         '	  </div>\n'
         '	</div>\n'
         '	<div class="row">\n'
-        '<!--    <div class="column1" id="block_container">-->\n'
         '		<div id="bloc2">\n'
     )
     f_out.write(f'          <span class="dates"> {entry["date"]} </span>\n')
@@ -165,9 +173,6 @@ for entry in entries:
     f_out.write(f'          <span class="authors"> {authors_list_string} </span>\n')
     f_out.write(
         '    		</div>\n'
-        '<!--</div>-->\n'
-        '<!--	  <div class="column1">-->\n'
-        '<!--	  </div>-->\n'
         '	</div>\n'
         '    <div class="row">\n'
         '		<div id="bloc2">\n'
@@ -213,16 +218,19 @@ for entry in entries:
     f_out.write(
         '    	</div>\n'
         '	</div>\n'
-        '<div class="collapse" id="collapse{{ id }}">\n'
-        '{% capture x %}\n'
     )
-    if not isinstance(entry["other"], list):
-        entry["other"] = [entry["other"]]
-    for element in entry["other"]:
-        f_out.write('* ' + element + '\n')
+    if other_not_empty:
+        f_out.write(
+            '<div class="collapse" id="collapse{{ id }}">\n'
+            '{% capture x %}\n'
+        )
+        for element in entry["other"]:
+            f_out.write('* ' + element + '\n')
+        f_out.write(
+            '{% endcapture %}{{ x | markdownify }}\n'
+            '</div>\n'
+        )
     f_out.write(
-        '{% endcapture %}{{ x | markdownify }}\n'
-        '</div>\n'
         ' <hr/>\n'
         '</div>\n'
         '<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->\n'

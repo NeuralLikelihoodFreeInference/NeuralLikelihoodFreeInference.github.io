@@ -6,27 +6,42 @@ layout: default
     <span>Authors: </span>
     <select id="authorselection" class="selectpicker" multiple data-live-search="true">
 <option>Aleksandra M. Walczak</option>
+<option>Andreas Hellander</option>
 <option>Andreass Voss</option>
 <option>Armita Nourmohammad</option>
 <option>David C. Sterratt</option>
-<option>David Greenberg</option>
+<option>David S. Greenberg</option>
+<option>François Rozet</option>
+<option>Fredrik Wrede</option>
 <option>George Papamakarios</option>
 <option>Giacomo Bassetto</option>
 <option>Gilles Louppe</option>
 <option>Giulio Isacchini</option>
 <option>Iain Murray</option>
+<option>Jack Simons</option>
 <option>Jakob H. Macke</option>
+<option>Jan Boelts</option>
 <option>Jan-Matthis Lueckmann</option>
 <option>Jes Frellsen</option>
 <option>Joeri Hermans</option>
 <option>Kaan Öcal</option>
+<option>Linda Petzold</option>
 <option>Lorenzo Pacchiardi</option>
 <option>Lynton Ardizzone</option>
+<option>Manuel Glöckler</option>
 <option>Marcel Nonnenmacher</option>
+<option>Mark Beaumont</option>
+<option>Michael Deistler</option>
 <option>Natanael Spisak</option>
 <option>Pedro J. Gonçalves</option>
+<option>Poornima Ramesh</option>
+<option>Prashant Singh</option>
+<option>Richard Jiang</option>
 <option>Ritabrata Dutta</option>
+<option>Robin Eriksson</option>
 <option>Samuel Wiqvist</option>
+<option>Song Liu</option>
+<option>Stefan Engblom</option>
 <option>Stefan T. Radev</option>
 <option>Theofanis Karaletsos</option>
 <option>Thierry Mora</option>
@@ -34,6 +49,7 @@ layout: default
 <option>Ullrich Köthe</option>
 <option>Umberto Picchini</option>
 <option>Volodimir Begy</option>
+<option>Álvaro Tejero-Cantero</option>
     </select>
   </span>
   <div class="selector">
@@ -63,6 +79,8 @@ layout: default
 <option>deep-ensembles</option>
 <option>classifier-NN</option>
 <option>any-NN</option>
+<option>generative-NN</option>
+<option>Bayesian-NN</option>
     </select>
   </span>
   <span class="selector">
@@ -70,6 +88,7 @@ layout: default
     <select id="samplesselection" class="selectpicker" multiple data-live-search="true">
 <option>direct</option>
 <option>MCMC</option>
+<option>Stein Variational Gradient Descent</option>
 </select>
   </span>
   <span class="selector">
@@ -336,7 +355,7 @@ layout: default
 	<div class="row">
 		<div id="bloc2">
           <span class="dates"> May 17, 2019 </span>
-          <span class="authors"> David Greenberg, Marcel Nonnenmacher, Jakob H. Macke </span>
+          <span class="authors"> David S. Greenberg, Marcel Nonnenmacher, Jakob H. Macke </span>
     		</div>
 	</div>
     <div class="row">
@@ -503,6 +522,55 @@ layout: default
 	<div class="row">
 	  <div class="column1" >
 {% capture x %}
+## Robust and integrative Bayesian neural networks for likelihood-free parameter inference
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/2102.06521" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> February 12, 2021 </span>
+          <span class="authors"> Fredrik Wrede, Robin Eriksson, Richard Jiang, Linda Petzold, Stefan Engblom, Andreas Hellander, Prashant Singh </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		Bayesian-NN 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		MCMC 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* They bin the parameter values and use a classifier to predict the exact parameter value from data
+* The classifier is a BNN and is trained on a set of parameter-data pairs
+* When a new observation comes, the posterior is estimated by MCMC on the posterior weights and combining the set of predictions of the classifier into a (discretized) posterior distribution.
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
 ## MINIMALIST: Mutual INformatIon Maximization for Amortized Likelihood Inference from Sampled Trajectories
     {% endcapture %}{{ x | markdownify }}
 	  </div>
@@ -539,6 +607,201 @@ layout: default
 <div class="collapse" id="collapse{{ id }}">
 {% capture x %}
 * [Code](https://github.com/statbiophys/MINIMALIST)
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## GATSBI: Generative Adversarial Training for Simulation-Based Inference
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://openreview.net/forum?id=kR1hC6j48Tp" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> September 29, 2021 </span>
+          <span class="authors"> Poornima Ramesh, Jan-Matthis Lueckmann, Jan Boelts, Álvaro Tejero-Cantero, David S. Greenberg, Pedro J. Gonçalves, Jakob H. Macke </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		generative-NN 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* Uses Generative Adversarial Networks to represent the posterior.
+* [Code](https://github.com/mackelab/gatsbi)
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Variational methods for simulation-based inference
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://openreview.net/forum?id=kZ0UYdhqkNY" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> September 29, 2021 </span>
+          <span class="authors"> Manuel Glöckler, Michael Deistler, Jakob H. Macke </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		likelihood, posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/mackelab/snvi_repo)
+* They consider the standard likelihood or likelihood-ratio approaches and replace MCMC with a variational inference done via normalizing flows
+* In this way you get benefits of targeting likelihood with no need of MCMC
+* Related to Wiqvist et al. (2021) above.
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Arbitrary Marginal Neural Ratio Estimation for Simulation-based Inference
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/2110.00449" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> October 1, 2021 </span>
+          <span class="authors"> François Rozet, Gilles Louppe </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		likelihood-ratio 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		classifier-NN 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		MCMC 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* Extension of Hermans et al. 2019 (above) which allows to explicitly obtain every possible marginal
+* Thanks to this you can plot marginals with no need of posterior sampling
+* [Code](https://github.com/francois-rozet/amnre)
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Variational Likelihood-Free Gradient Descent
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://openreview.net/forum?id=svH3klEbuXa" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> November 22, 2021 </span>
+          <span class="authors"> Jack Simons, Song Liu, Mark Beaumont </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		likelihood-ratio 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		classifier-NN 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		Stein Variational Gradient Descent 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* Considers a set of particles which will be a posterior approximation
+* The particles are fitted to the posterior by alternating between NN training and Stein Variaional Gradient Descent steps
 {% endcapture %}{{ x | markdownify }}
 </div>
  <hr/>

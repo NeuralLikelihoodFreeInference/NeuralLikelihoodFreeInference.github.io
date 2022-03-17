@@ -261,5 +261,25 @@
       "Related to Wiqvist et al. (2021) above."
     ],
     "link": "https://openreview.net/forum?id=kZ0UYdhqkNY"
+  },
+  {
+    "authors": [
+      "Pedro L. C. Rodrigues",
+      "Thomas Moreau",
+      "Gilles Louppe",
+      "Alexandre Gramfort"
+    ],
+    "title": "HNPE: Leveraging Global Parameters for Neural Posterior Estimation",
+    "date": "December, 2021",
+    "target": [
+      "posterior"
+    ],
+    "nn": "normalizing-flows",
+    "samples": "direct",
+    "sequential": "yes",
+    "other": [
+      "[Code](https://github.com/plcrodrigues/HNPE)"
+    ],
+    "link": "https://proceedings.neurips.cc/paper/2021/hash/6fbd841e2e4b2938351a4f9b68f12e6b-Abstract.html"
   }
 ]

@@ -6,13 +6,16 @@ layout: default
     <span>Authors: </span>
     <select id="authorselection" class="selectpicker" multiple data-live-search="true">
 <option>Aleksandra M. Walczak</option>
+<option>Alexander Fengler</option>
 <option>Andreas Hellander</option>
 <option>Andreass Voss</option>
 <option>Armita Nourmohammad</option>
+<option>Arnaud Doucet</option>
 <option>David C. Sterratt</option>
 <option>David S. Greenberg</option>
 <option>François Rozet</option>
 <option>Fredrik Wrede</option>
+<option>George Deligiannidis</option>
 <option>George Papamakarios</option>
 <option>Giacomo Bassetto</option>
 <option>Gilles Louppe</option>
@@ -25,14 +28,18 @@ layout: default
 <option>Jes Frellsen</option>
 <option>Joeri Hermans</option>
 <option>Kaan Öcal</option>
+<option>Lakshmi N Govindarajan</option>
 <option>Linda Petzold</option>
 <option>Lorenzo Pacchiardi</option>
 <option>Lynton Ardizzone</option>
 <option>Manuel Glöckler</option>
 <option>Marcel Nonnenmacher</option>
 <option>Mark Beaumont</option>
+<option>Marvin Schmitt</option>
 <option>Michael Deistler</option>
+<option>Michael J Frank</option>
 <option>Natanael Spisak</option>
+<option>Paul-Christian Bürkner</option>
 <option>Pedro J. Gonçalves</option>
 <option>Poornima Ramesh</option>
 <option>Prashant Singh</option>
@@ -45,10 +52,13 @@ layout: default
 <option>Stefan T. Radev</option>
 <option>Theofanis Karaletsos</option>
 <option>Thierry Mora</option>
+<option>Tony Chen</option>
 <option>Ulf K. Mertens</option>
 <option>Ullrich Köthe</option>
 <option>Umberto Picchini</option>
+<option>Valentin De Bortoli</option>
 <option>Volodimir Begy</option>
+<option>Yuyang Shi</option>
 <option>Álvaro Tejero-Cantero</option>
     </select>
   </span>
@@ -61,6 +71,7 @@ layout: default
 <option>2019</option>
 <option>2020</option>
 <option>2021</option>
+<option>2022</option>
     </select>
   </div>
   <span class="selector">
@@ -81,6 +92,7 @@ layout: default
 <option>any-NN</option>
 <option>generative-NN</option>
 <option>Bayesian-NN</option>
+<option>denoising-diffusion-model</option>
     </select>
   </span>
   <span class="selector">
@@ -417,6 +429,54 @@ layout: default
 <div class="collapse" id="collapse{{ id }}">
 {% capture x %}
 * [Code](https://github.com/stefanradev93/cINN)
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Likelihood approximation networks (LANs) for fast inference of simulation models in cognitive neuroscience
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://elifesciences.org/articles/65074#fig1" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> December 2, 2020 </span>
+          <span class="authors"> Alexander Fengler, Lakshmi N Govindarajan, Tony Chen, Michael J Frank </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		likelihood 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		any-NN 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		MCMC 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/lnccbrown/lans)
+* They use NNs to directly approximate likelihood estimates obtained by KDE or binned empirical estimates from repeated model simulations.
 {% endcapture %}{{ x | markdownify }}
 </div>
  <hr/>
@@ -802,6 +862,101 @@ layout: default
 {% capture x %}
 * Considers a set of particles which will be a posterior approximation
 * The particles are fitted to the posterior by alternating between NN training and Stein Variaional Gradient Descent steps
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## BayesFlow Can Reliably Detect Model Misspecification and Posterior Errors in Amortized Bayesian Inference
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/2112.08866" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> December 16, 2021 </span>
+          <span class="authors"> Marvin Schmitt, Paul-Christian Bürkner, Ullrich Köthe, Stefan T. Radev </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/marvinschmitt/ModelMisspecificationBF)
+* They modify the original BayesFlow approach (Radev et al. 2020, see above) to somehow handle and diagnose model misspecification, using MMD.
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Conditional Simulation Using Diffusion Schrödinger Bridges
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/2202.13460" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> February 27, 2022 </span>
+          <span class="authors"> Yuyang Shi, Valentin De Bortoli, George Deligiannidis, Arnaud Doucet </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		denoising-diffusion-model 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="nn"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* They use denoising diffusion models on an extended state space which allows for Likelihood-Free Bayesian Inference
 {% endcapture %}{{ x | markdownify }}
 </div>
  <hr/>

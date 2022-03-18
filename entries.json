@@ -261,5 +261,67 @@
       "Related to Wiqvist et al. (2021) above."
     ],
     "link": "https://openreview.net/forum?id=kZ0UYdhqkNY"
+  },
+  {
+    "authors": [
+      "Yuyang Shi",
+      "Valentin De Bortoli",
+      "George Deligiannidis",
+      "Arnaud Doucet"
+    ],
+    "title": "Conditional Simulation Using Diffusion Schrödinger Bridges",
+    "date": "February 27, 2022",
+    "target": [
+      "posterior"
+    ],
+    "nn": "denoising-diffusion-model",
+    "samples": "direct",
+    "sequential": "no",
+    "other": [
+      "They use denoising diffusion models on an extended state space which allows for Likelihood-Free Bayesian Inference"
+    ],
+    "link": "https://arxiv.org/abs/2202.13460"
+  },
+  {
+    "authors": [
+      "Marvin Schmitt",
+      "Paul-Christian Bürkner",
+      "Ullrich Köthe",
+      "Stefan T. Radev"
+    ],
+    "title": "BayesFlow Can Reliably Detect Model Misspecification and Posterior Errors in Amortized Bayesian Inference",
+    "date": "December 16, 2021",
+    "target": [
+      "posterior"
+    ],
+    "nn": "normalizing-flows",
+    "samples": "direct",
+    "sequential": "no",
+    "other": [
+      "[Code](https://github.com/marvinschmitt/ModelMisspecificationBF)",
+      "They modify the original BayesFlow approach (Radev et al. 2020, see above) to somehow handle and diagnose model misspecification, using MMD."
+    ],
+    "link": "https://arxiv.org/abs/2112.08866"
+  },
+  {
+    "authors": [
+      "Alexander Fengler",
+      "Lakshmi N Govindarajan",
+      "Tony Chen",
+      "Michael J Frank"
+    ],
+    "title": "Likelihood approximation networks (LANs) for fast inference of simulation models in cognitive neuroscience",
+    "date": "December 2, 2020",
+    "target": [
+      "likelihood"
+    ],
+    "nn": "any-NN",
+    "samples": "MCMC",
+    "sequential": "no",
+    "other": [
+      "[Code](https://github.com/lnccbrown/lans)",
+      "They use NNs to directly approximate likelihood estimates obtained by KDE or binned empirical estimates from repeated model simulations."
+    ],
+    "link": "https://elifesciences.org/articles/65074#fig1"
   }
 ]

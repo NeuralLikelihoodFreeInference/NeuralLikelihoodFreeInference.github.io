@@ -64,9 +64,6 @@ f_out.write(
     '---\n'
     'layout: default\n'
     '---\n'
-)
-
-f_out.write(
     '<div class="row">\n'
     '  <span class="selector">\n'
     '    <span>Authors: </span>\n'
@@ -144,17 +141,13 @@ for entry in entries:
         '	<div class="row">\n'
         '	  <div class="column1" >\n'
         '{% capture x %}\n'
-    )
-    f_out.write(f'## {entry["title"]}\n')
-    f_out.write(
+        f'## {entry["title"]}\n'
         '    {% endcapture %}{{ x | markdownify }}\n'
         '	  </div>\n'
         '	  <div class="column2" >\n'
         '	    <div id="block_container">\n'
         '		<div id="bloc2">\n'
-    )
-    f_out.write(f' 		<a href="{entry["link"]}" target="_blank" class="btn btn-info" role="button"> Paper </a>\n')
-    f_out.write(
+        f' 		<a href="{entry["link"]}" target="_blank" class="btn btn-info" role="button"> Paper </a>\n'
         '		</div>\n'
         '		<div id="bloc3">\n'
         '		     <p>\n'
@@ -173,60 +166,58 @@ for entry in entries:
         '	</div>\n'
         '	<div class="row">\n'
         '		<div id="bloc2">\n'
-    )
-    f_out.write(f'          <span class="dates"> {entry["date"]} </span>\n')
+        f'          <span class="dates"> {entry["date"]} </span>\n')
 
     authors_list_string = ''
     for i in range(len(entry["authors"]) - 1):
         authors_list_string += f'{entry["authors"][i]}, '
     authors_list_string += f'{entry["authors"][-1]}'
 
-    f_out.write(f'          <span class="authors"> {authors_list_string} </span>\n')
-    f_out.write(
+    f_out.write(f'          <span class="authors"> {authors_list_string} </span>\n'
         '    		</div>\n'
         '	</div>\n'
         '    <div class="row">\n'
         '		<div id="bloc2">\n'
     )
     if not (isinstance(entry["target"], list) and len(entry["target"]) == 0):
-        f_out.write('	  	<span class="label_first">   Target: 		  </span>\n')
         target_list_string = ''
         if not isinstance(entry["target"], list):
             entry["target"] = [entry["target"]]
         for i in range(len(entry["target"]) - 1):
             target_list_string += f'{entry["target"][i]}, '
         target_list_string += f'{entry["target"][-1]}'
-        f_out.write(f'        <span class="target"> 		{target_list_string} 	 </span>\n')
+        f_out.write('	  	<span class="label_first">   Target: 		  </span>\n'
+                    f'        <span class="target"> 		{target_list_string} 	 </span>\n')
 
     if not (isinstance(entry["nn"], list) and len(entry["nn"]) == 0):
-        f_out.write('  	<span class="label">   Neural Network: 		  </span>')
         nn_list_string = ''
         if not isinstance(entry["nn"], list):
             entry["nn"] = [entry["nn"]]
         for i in range(len(entry["nn"]) - 1):
             nn_list_string += f'{entry["nn"][i]}, '
         nn_list_string += f'{entry["nn"][-1]}'
-        f_out.write(f'        <span class="nn"> 		{nn_list_string} 	 </span>\n')
+        f_out.write('  	<span class="label">   Neural Network: 		  </span>'
+                    f'        <span class="nn"> 		{nn_list_string} 	 </span>\n')
 
     if not (isinstance(entry["samples"], list) and len(entry["target"]) == 0):
-        f_out.write('  	<span class="label">   Samples: 		  </span>')
         samples_list_string = ''
         if not isinstance(entry["samples"], list):
             entry["samples"] = [entry["samples"]]
         for i in range(len(entry["samples"]) - 1):
             samples_list_string += f'{entry["samples"][i]}, '
         samples_list_string += f'{entry["samples"][-1]}'
-        f_out.write(f'        <span class="samples"> 		{samples_list_string} 	 </span>\n')
+        f_out.write('  	<span class="label">   Samples: 		  </span>'
+                    f'        <span class="samples"> 		{samples_list_string} 	 </span>\n')
 
     if not (isinstance(entry["sequential"], list) and len(entry["sequential"]) == 0):
-        f_out.write('  	<span class="label">   Sequential: 		  </span>')
         sequential_list_string = ''
         if not isinstance(entry["sequential"], list):
             entry["sequential"] = [entry["sequential"]]
         for i in range(len(entry["sequential"]) - 1):
             sequential_list_string += f'{entry["sequential"][i]}, '
         sequential_list_string += f'{entry["sequential"][-1]}'
-        f_out.write(f'        <span class="seq_am"> 		{sequential_list_string} 	 </span>\n')
+        f_out.write('  	<span class="label">   Sequential: 		  </span>'
+                    f'        <span class="seq_am"> 		{sequential_list_string} 	 </span>\n')
 
     if "additional_description" in entry:
         f_out.write(

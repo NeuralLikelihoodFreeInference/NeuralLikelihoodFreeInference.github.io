@@ -323,5 +323,150 @@
       "They use NNs to directly approximate likelihood estimates obtained by KDE or binned empirical estimates from repeated model simulations."
     ],
     "link": "https://elifesciences.org/articles/65074#fig1"
+  },
+  {
+    "authors": [
+      "Conor Durkan",
+      "Iain Murray",
+      "George Papamakarios"
+    ],
+    "title": "On Contrastive Learning for Likelihood-free Inference",
+    "date": "February 10, 2020",
+    "target": [
+      "likelihood-ratio",
+      "posterior"
+    ],
+    "nn": [
+      "classifier-NN",
+      "normalizing-flows"
+    ],
+    "samples": [
+      "MCMC",
+      "direct"
+    ],
+    "sequential": "yes",
+    "other": [
+      "[Code](https://github.com/conormdurkan/lfi)",
+      "They unify the ratio estimation approach by Hermans et al. (2019) with the sequential neural posterior formulation of Greenberg et al. (2019)."
+    ],
+    "link": "https://arxiv.org/abs/2002.03712"
+  },
+  {
+    "authors": [
+      "Kyle Cranmer",
+      "Johann Brehmer",
+      "Gilles Louppe"
+    ],
+    "title": "The frontier of simulation-based inference",
+    "date": "November 4, 2019",
+    "target": [],
+    "nn": [],
+    "samples": [],
+    "sequential": [],
+    "additional_description": "Review paper",
+    "other": [
+      "They discuss recent advaces in LFI, including NN-based methods."
+    ],
+    "link": "https://arxiv.org/abs/1911.01429"
+  },
+  {
+    "authors": [
+      "Jan-Matthis Lueckmann",
+      "Jan Boelts",
+      "David S. Greenberg",
+      "Pedro J. Gonçalves",
+      "Jakob H. Macke"
+    ],
+    "title": "Benchmarking Simulation-Based Inference",
+    "date": "January 12, 2021",
+    "target": [],
+    "nn": [],
+    "samples": [],
+    "sequential": [],
+    "additional_description": "Benchmark repository",
+    "other": [
+      "[Code](https://github.com/sbi-benchmark/sbibm)",
+      "Benchmark repository for LFI methods.",
+      "They test the performance of LFI methods (including NN-based ones) on a variety of models and data sets.",
+      "Interactive results at [this webpage](https://sbi-benchmark.github.io/)"
+    ],
+    "link": "https://arxiv.org/abs/2101.04653"
+  },
+  {
+    "authors": [
+      "Alvaro Tejero-Cantero",
+      "Jan Boelts",
+      "Michael Deistler",
+      "Jan-Matthis Lueckmann",
+      "Conor Durkan",
+      "Pedro J. Gonçalves",
+      "David S. Greenberg",
+      "Jakob H. Macke"
+    ],
+    "title": "SBI -- A toolkit for simulation-based inference",
+    "date": "July 17, 2020",
+    "target": [],
+    "nn": [],
+    "samples": [],
+    "sequential": [],
+    "additional_description": "Python package",
+    "other": [
+      "[Code](https://github.com/mackelab/sbi)",
+      "A Python toolbox for simulation-based inference methods based on NNs.",
+      "Documentation at [this webpage](https://www.mackelab.org/sbi/)"
+    ],
+    "link": "https://arxiv.org/abs/2007.09114"
+  },
+  {
+    "authors": [
+      "Hanwen Xing",
+      "Geoff Nicholls",
+      "Jeong (Kate) Lee"
+    ],
+    "title": "Distortion estimates for approximate Bayesian inference",
+    "date": "June 19, 2020",
+    "target": [
+      "posterior"
+    ],
+    "nn": [
+      "normalizing-flows"
+    ],
+    "samples": [
+      "direct"
+    ],
+    "sequential": "no",
+    "other": [
+      "They use normalizing flows to build distortion maps which acts on univariate marginals of the approximate posterior to move them closer to the exact posterior, without evaluation of the latter, for a specific observation.",
+      "Can be applied to any posterior approximation, provided simulations from the model are doable."
+    ],
+    "link": "https://arxiv.org/abs/2006.11228"
+  },
+  {
+    "authors": [
+      "Maximilian Dax",
+      "Stephen R. Green",
+      "Jonathan Gair",
+      "Michael Deistler",
+      "Bernhard Schölkopf",
+      "Jakob H. Macke"
+    ],
+    "title": "Group equivariant neural posterior estimation",
+    "date": "November 25, 2021",
+    "target": [
+      "posterior"
+    ],
+    "nn": [
+      "normalizing-flows"
+    ],
+    "samples": [
+      "MCMC"
+    ],
+    "sequential": "no",
+    "other": [
+      "Extension of the Neural Posterior Estimation approach with normalizing flows to incorporate equivariant transformations.",
+      "The methods works without changing the NN architecture, instead transforming the data via another transformation before feeding it into the NN. The transformation is also parametrized by a NN.",
+      "It defines a joint posterior on parameters and transformation and then obtain posterior samples via Gibbs sampling on the two conditionals (each conditional sampling steps do not require MCMC, as normalizing flows are used for the conditional on parameters and blurring via a kernel is used for the transformation conditional)."
+    ],
+    "link": "https://arxiv.org/abs/2111.13139"
   }
 ]

@@ -138,7 +138,11 @@
     "nn": "normalizing-flows",
     "samples": "direct",
     "sequential": "yes",
-    "other": "[Code](https://github.com/SamuelWiqvist/snpla)",
+    "other": [
+      "[Code](https://github.com/SamuelWiqvist/snpla)",
+      "They use normalizing flows for both the posterior and the likelihood.",
+      "They also optionally use an additional NN for learning summary statistics at the same time."
+    ],
     "link": "https://arxiv.org/abs/2102.06522"
   },
   {

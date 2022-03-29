@@ -179,45 +179,45 @@ for entry in entries:
         '    <div class="row">\n'
         '		<div id="bloc2">\n'
     )
-    if not (isinstance(entry["target"], list) and len(entry["target"]) == 0):
-        target_list_string = ''
-        if not isinstance(entry["target"], list):
-            entry["target"] = [entry["target"]]
-        for i in range(len(entry["target"]) - 1):
-            target_list_string += f'{entry["target"][i]}, '
+    target_list_string = ''
+    if not isinstance(entry["target"], list):
+        entry["target"] = [entry["target"]]
+    for i in range(len(entry["target"]) - 1):
+        target_list_string += f'{entry["target"][i]}, '
+    if len(entry["target"]) > 0:
         target_list_string += f'{entry["target"][-1]}'
-        f_out.write('	  	<span class="label_first">   Target: 		  </span>\n'
-                    f'        <span class="target"> 		{target_list_string} 	 </span>\n')
+        f_out.write('	  	<span class="label_first">   Target: 		  </span>\n')
+    f_out.write(f'        <span class="target"> 		{target_list_string} 	 </span>\n')
 
-    if not (isinstance(entry["nn"], list) and len(entry["nn"]) == 0):
-        nn_list_string = ''
-        if not isinstance(entry["nn"], list):
-            entry["nn"] = [entry["nn"]]
-        for i in range(len(entry["nn"]) - 1):
-            nn_list_string += f'{entry["nn"][i]}, '
+    nn_list_string = ''
+    if not isinstance(entry["nn"], list):
+        entry["nn"] = [entry["nn"]]
+    for i in range(len(entry["nn"]) - 1):
+        nn_list_string += f'{entry["nn"][i]}, '
+    if len(entry["nn"]) > 0:
         nn_list_string += f'{entry["nn"][-1]}'
-        f_out.write('  	<span class="label">   Neural Network: 		  </span>'
-                    f'        <span class="nn"> 		{nn_list_string} 	 </span>\n')
+        f_out.write('  	<span class="label">   Neural Network: 		  </span>')
+    f_out.write(f'        <span class="nn"> 		{nn_list_string} 	 </span>\n')
 
-    if not (isinstance(entry["samples"], list) and len(entry["target"]) == 0):
-        samples_list_string = ''
-        if not isinstance(entry["samples"], list):
-            entry["samples"] = [entry["samples"]]
-        for i in range(len(entry["samples"]) - 1):
-            samples_list_string += f'{entry["samples"][i]}, '
+    samples_list_string = ''
+    if not isinstance(entry["samples"], list):
+        entry["samples"] = [entry["samples"]]
+    for i in range(len(entry["samples"]) - 1):
+        samples_list_string += f'{entry["samples"][i]}, '
+    if len(entry["samples"]) > 0:
         samples_list_string += f'{entry["samples"][-1]}'
-        f_out.write('  	<span class="label">   Samples: 		  </span>'
-                    f'        <span class="samples"> 		{samples_list_string} 	 </span>\n')
+        f_out.write('  	<span class="label">   Samples: 		  </span>')
+    f_out.write(        f'        <span class="samples"> 		{samples_list_string} 	 </span>\n')
 
-    if not (isinstance(entry["sequential"], list) and len(entry["sequential"]) == 0):
-        sequential_list_string = ''
-        if not isinstance(entry["sequential"], list):
-            entry["sequential"] = [entry["sequential"]]
-        for i in range(len(entry["sequential"]) - 1):
-            sequential_list_string += f'{entry["sequential"][i]}, '
+    sequential_list_string = ''
+    if not isinstance(entry["sequential"], list):
+        entry["sequential"] = [entry["sequential"]]
+    for i in range(len(entry["sequential"]) - 1):
+        sequential_list_string += f'{entry["sequential"][i]}, '
+    if len(entry["sequential"]) > 0:
         sequential_list_string += f'{entry["sequential"][-1]}'
-        f_out.write('  	<span class="label">   Sequential: 		  </span>'
-                    f'        <span class="seq_am"> 		{sequential_list_string} 	 </span>\n')
+        f_out.write('  	<span class="label">   Sequential: 		  </span>')
+    f_out.write(        f'        <span class="seq_am"> 		{sequential_list_string} 	 </span>\n')
 
     if "additional_description" in entry:
         f_out.write(

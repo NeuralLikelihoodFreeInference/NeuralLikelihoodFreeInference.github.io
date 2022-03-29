@@ -430,6 +430,10 @@ layout: default
 	</div>
     <div class="row">
 		<div id="bloc2">
+        <span class="target"> 		 	 </span>
+        <span class="nn"> 		 	 </span>
+        <span class="samples"> 		 	 </span>
+        <span class="seq_am"> 		 	 </span>
         <span class="additional_description"> 		Review paper 	 </span>
     	</div>
 	</div>
@@ -616,6 +620,10 @@ layout: default
 	</div>
     <div class="row">
 		<div id="bloc2">
+        <span class="target"> 		 	 </span>
+        <span class="nn"> 		 	 </span>
+        <span class="samples"> 		 	 </span>
+        <span class="seq_am"> 		 	 </span>
         <span class="additional_description"> 		Python package 	 </span>
     	</div>
 	</div>
@@ -756,6 +764,10 @@ layout: default
 	</div>
     <div class="row">
 		<div id="bloc2">
+        <span class="target"> 		 	 </span>
+        <span class="nn"> 		 	 </span>
+        <span class="samples"> 		 	 </span>
+        <span class="seq_am"> 		 	 </span>
         <span class="additional_description"> 		Benchmark repository 	 </span>
     	</div>
 	</div>
@@ -812,6 +824,8 @@ layout: default
 <div class="collapse" id="collapse{{ id }}">
 {% capture x %}
 * [Code](https://github.com/SamuelWiqvist/snpla)
+* They use normalizing flows for both the posterior and the likelihood.
+* They also optionally use an additional NN for learning summary statistics at the same time.
 {% endcapture %}{{ x | markdownify }}
 </div>
  <hr/>

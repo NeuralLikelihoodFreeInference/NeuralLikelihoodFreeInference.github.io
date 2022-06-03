@@ -472,5 +472,22 @@
       "It defines a joint posterior on parameters and transformation and then obtain posterior samples via Gibbs sampling on the two conditionals (each conditional sampling steps do not require MCMC, as normalizing flows are used for the conditional on parameters and blurring via a kernel is used for the transformation conditional)."
     ],
     "link": "https://arxiv.org/abs/2111.13139"
+  },
+  {
+    "authors": [
+      "Lorenzo Pacchiardi",
+      "Ritabrata Dutta"
+    ],
+    "title": "Likelihood-Free Inference with Generative Neural Networks via Scoring Rule Minimization",
+    "date": "May 31, 2022",
+    "target": "posterior",
+    "nn": "generative-NN",
+    "samples": "direct",
+    "sequential": "yes",
+    "other": [
+      "[Code](https://github.com/LoryPack/LFI_gen_networks_Scoring_Rules)",
+      "Same setup as Ramesh et al., but training the generative network via scoring rule minimization rather than adversarial training."
+    ],
+    "link": "https://arxiv.org/abs/2205.15784"
   }
 ]

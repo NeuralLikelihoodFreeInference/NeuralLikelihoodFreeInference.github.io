@@ -7,6 +7,7 @@ layout: default
     <select id="authorselection" class="selectpicker" multiple data-live-search="true">
 <option>Aleksandra M. Walczak</option>
 <option>Alexander Fengler</option>
+<option>Alexandre Gramfort</option>
 <option>Alvaro Tejero-Cantero</option>
 <option>Andreas Hellander</option>
 <option>Andreass Voss</option>
@@ -51,6 +52,7 @@ layout: default
 <option>Natanael Spisak</option>
 <option>Paul-Christian Bürkner</option>
 <option>Pedro J. Gonçalves</option>
+<option>Pedro L. C. Rodrigues</option>
 <option>Poornima Ramesh</option>
 <option>Prashant Singh</option>
 <option>Richard Jiang</option>
@@ -63,6 +65,7 @@ layout: default
 <option>Stephen R. Green</option>
 <option>Theofanis Karaletsos</option>
 <option>Thierry Mora</option>
+<option>Thomas Moreau</option>
 <option>Tony Chen</option>
 <option>Ulf K. Mertens</option>
 <option>Ullrich Köthe</option>
@@ -1166,6 +1169,54 @@ layout: default
 * Extension of the Neural Posterior Estimation approach with normalizing flows to incorporate equivariant transformations.
 * The methods works without changing the NN architecture, instead transforming the data via another transformation before feeding it into the NN. The transformation is also parametrized by a NN.
 * It defines a joint posterior on parameters and transformation and then obtain posterior samples via Gibbs sampling on the two conditionals (each conditional sampling steps do not require MCMC, as normalizing flows are used for the conditional on parameters and blurring via a kernel is used for the transformation conditional).
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## HNPE: Leveraging Global Parameters for Neural Posterior Estimation
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://proceedings.neurips.cc/paper/2021/hash/6fbd841e2e4b2938351a4f9b68f12e6b-Abstract.html" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> December, 2021 </span>
+          <span class="authors"> Pedro L. C. Rodrigues, Thomas Moreau, Gilles Louppe, Alexandre Gramfort </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/plcrodrigues/HNPE)
+* They extend LFI methods using normalizing flows for Bayesian hierarchical models.
 {% endcapture %}{{ x | markdownify }}
 </div>
  <hr/>

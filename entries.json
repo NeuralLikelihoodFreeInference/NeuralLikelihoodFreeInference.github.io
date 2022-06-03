@@ -489,5 +489,26 @@
       "Same setup as Ramesh et al., but training the generative network via scoring rule minimization rather than adversarial training."
     ],
     "link": "https://arxiv.org/abs/2205.15784"
+  },
+  {
+    "authors": [
+      "Pedro L. C. Rodrigues",
+      "Thomas Moreau",
+      "Gilles Louppe",
+      "Alexandre Gramfort"
+    ],
+    "title": "HNPE: Leveraging Global Parameters for Neural Posterior Estimation",
+    "date": "December, 2021",
+    "target": [
+      "posterior"
+    ],
+    "nn": "normalizing-flows",
+    "samples": "direct",
+    "sequential": "yes",
+    "other": [
+      "[Code](https://github.com/plcrodrigues/HNPE)",
+      "They extend LFI methods using normalizing flows for Bayesian hierarchical models."
+    ],
+    "link": "https://proceedings.neurips.cc/paper/2021/hash/6fbd841e2e4b2938351a4f9b68f12e6b-Abstract.html"
   }
 ]

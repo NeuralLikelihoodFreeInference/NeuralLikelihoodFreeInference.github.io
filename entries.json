@@ -81,7 +81,7 @@
     "authors": [
       "Stefan T. Radev",
       "Ulf K. Mertens",
-      "Andreass Voss",
+      "Andreas Voss",
       "Lynton Ardizzone",
       "Ullrich Köthe"
     ],
@@ -293,7 +293,7 @@
       "Ullrich Köthe",
       "Stefan T. Radev"
     ],
-    "title": "BayesFlow Can Reliably Detect Model Misspecification and Posterior Errors in Amortized Bayesian Inference",
+    "title": "Detecting Model Misspecification in Amortized Bayesian Inference with Neural Networks",
     "date": "December 16, 2021",
     "target": [
       "posterior"
@@ -510,5 +510,96 @@
       "They extend LFI methods using normalizing flows for Bayesian hierarchical models."
     ],
     "link": "https://proceedings.neurips.cc/paper/2021/hash/6fbd841e2e4b2938351a4f9b68f12e6b-Abstract.html"
+  },
+  {
+    "authors": [
+      "Stefan T. Radev",
+      "Marco D'Alessandro",
+      "Ulf K. Mertens",
+      "Andreas Voss",
+      "Ullrich Köthe",
+      "Paul-Christian Bürkner"
+    ],
+    "title": "Amortized Bayesian model comparison with evidential deep learning",
+    "date": "March, 2021",
+    "target": [
+      "model-evidence"
+    ],
+    "nn": "classifier-NN",
+    "samples": "-",
+    "sequential": "no",
+    "other": [
+      "[Code](https://github.com/stefanradev93/BayesFlow)",
+      "Way to perform model selection using a NN to estimate the model evidence",
+      "Amortized over the different models, so that they do not need to be fit to the data independently"
+    ],
+    "link": "https://arxiv.org/abs/2004.10629"
+  },
+  {
+    "authors": [
+      "Lynton Ardizzone",
+      "Jakob Kruse",
+      "Sebastian Wirkert",
+      "Daniel Rahner",
+      "Eric W. Pellegrini",
+      "Ralf S. Klessen",
+      "Lena Maier-Hein",
+      "Carsten Rother",
+      "Ullrich Köthe"
+    ],
+    "title": "Analyzing Inverse Problems with Invertible Neural Networks",
+    "date": "February, 2019",
+    "target": [
+      "posterior"
+    ],
+    "nn": "normalizing-flows",
+    "samples": "direct",
+    "sequential": "no",
+    "other": [
+      "Different way to train a normalizing flow for amortized posterior inference with respect to Radev et al. 2021."
+    ],
+    "link": "https://arxiv.org/abs/1808.04730"
+  },
+  {
+    "authors": [
+      "Dustin Tran",
+      "Rajesh Ranganath",
+      "David M. Blei"
+    ],
+    "title": "Hierarchical Implicit Models and Likelihood-Free Variational Inference",
+    "date": "November, 2017",
+    "target": [
+      "posterior"
+    ],
+    "nn": "generative-NN",
+    "samples": "direct",
+    "sequential": "no",
+    "other": [
+      "Trains a generative network for inferring the posterior in hierarchical models.",
+      "For non-hierarchical models, the approach is very similar to GATSBI (Ramesh et al., 2021)"
+    ],
+    "link": "https://arxiv.org/abs/1702.08896"
+  },
+  {
+    "authors": [
+      "Geoffrey Roeder",
+      "Paul K. Grant",
+      "Andrew Phillips",
+      "Neil Dalchau",
+      "Edward Meeds"
+    ],
+    "title": "Efficient Amortised Bayesian Inference for Hierarchical and Nonlinear Dynamical Systems",
+    "date": "October, 2019",
+    "target": [
+      "posterior"
+    ],
+    "nn": "autoencoders",
+    "samples": "direct",
+    "sequential": "no",
+    "other": [
+      "[Code](https://github.com/Microsoft/vi-hds)",
+      "Use variational inference to train autoencoders for posterior inference."
+    ],
+    "link": "https://arxiv.org/abs/1905.12090"
   }
 ]

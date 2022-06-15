@@ -10,16 +10,24 @@ layout: default
 <option>Alexandre Gramfort</option>
 <option>Alvaro Tejero-Cantero</option>
 <option>Andreas Hellander</option>
-<option>Andreass Voss</option>
+<option>Andreas Voss</option>
+<option>Andrew Phillips</option>
 <option>Armita Nourmohammad</option>
 <option>Arnaud Doucet</option>
 <option>Bernhard Schölkopf</option>
+<option>Carsten Rother</option>
 <option>Conor Durkan</option>
+<option>Daniel Rahner</option>
 <option>David C. Sterratt</option>
+<option>David M. Blei</option>
 <option>David S. Greenberg</option>
+<option>Dustin Tran</option>
+<option>Edward Meeds</option>
+<option>Eric W. Pellegrini</option>
 <option>François Rozet</option>
 <option>Fredrik Wrede</option>
 <option>Geoff Nicholls</option>
+<option>Geoffrey Roeder</option>
 <option>George Deligiannidis</option>
 <option>George Papamakarios</option>
 <option>Giacomo Bassetto</option>
@@ -29,6 +37,7 @@ layout: default
 <option>Iain Murray</option>
 <option>Jack Simons</option>
 <option>Jakob H. Macke</option>
+<option>Jakob Kruse</option>
 <option>Jan Boelts</option>
 <option>Jan-Matthis Lueckmann</option>
 <option>Jeong (Kate) Lee</option>
@@ -39,26 +48,33 @@ layout: default
 <option>Kaan Öcal</option>
 <option>Kyle Cranmer</option>
 <option>Lakshmi N Govindarajan</option>
+<option>Lena Maier-Hein</option>
 <option>Linda Petzold</option>
 <option>Lorenzo Pacchiardi</option>
 <option>Lynton Ardizzone</option>
 <option>Manuel Glöckler</option>
 <option>Marcel Nonnenmacher</option>
+<option>Marco D'Alessandro</option>
 <option>Mark Beaumont</option>
 <option>Marvin Schmitt</option>
 <option>Maximilian Dax</option>
 <option>Michael Deistler</option>
 <option>Michael J Frank</option>
 <option>Natanael Spisak</option>
+<option>Neil Dalchau</option>
+<option>Paul K. Grant</option>
 <option>Paul-Christian Bürkner</option>
 <option>Pedro J. Gonçalves</option>
 <option>Pedro L. C. Rodrigues</option>
 <option>Poornima Ramesh</option>
 <option>Prashant Singh</option>
+<option>Rajesh Ranganath</option>
+<option>Ralf S. Klessen</option>
 <option>Richard Jiang</option>
 <option>Ritabrata Dutta</option>
 <option>Robin Eriksson</option>
 <option>Samuel Wiqvist</option>
+<option>Sebastian Wirkert</option>
 <option>Song Liu</option>
 <option>Stefan Engblom</option>
 <option>Stefan T. Radev</option>
@@ -94,6 +110,7 @@ layout: default
 <option>posterior</option>
 <option>likelihood</option>
 <option>likelihood-ratio</option>
+<option>model-evidence</option>
     </select>
   </span>
   <span class="selector">
@@ -107,6 +124,7 @@ layout: default
 <option>generative-NN</option>
 <option>Bayesian-NN</option>
 <option>denoising-diffusion-model</option>
+<option>autoencoders</option>
     </select>
   </span>
   <span class="selector">
@@ -115,6 +133,7 @@ layout: default
 <option>direct</option>
 <option>MCMC</option>
 <option>Stein Variational Gradient Descent</option>
+<option>-</option>
 </select>
   </span>
   <span class="selector">
@@ -227,6 +246,54 @@ layout: default
 	<div class="row">
 	  <div class="column1" >
 {% capture x %}
+## Hierarchical Implicit Models and Likelihood-Free Variational Inference
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/1702.08896" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> November, 2017 </span>
+          <span class="authors"> Dustin Tran, Rajesh Ranganath, David M. Blei </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		generative-NN 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* Trains a generative network for inferring the posterior in hierarchical models.
+* For non-hierarchical models, the approach is very similar to GATSBI (Ramesh et al., 2021)
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
 ## Sequential Neural Likelihood: Fast Likelihood-free Inference with Autoregressive Flows
     {% endcapture %}{{ x | markdownify }}
 	  </div>
@@ -304,6 +371,53 @@ layout: default
   	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
     	</div>
 	</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Analyzing Inverse Problems with Invertible Neural Networks
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/1808.04730" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> February, 2019 </span>
+          <span class="authors"> Lynton Ardizzone, Jakob Kruse, Sebastian Wirkert, Daniel Rahner, Eric W. Pellegrini, Ralf S. Klessen, Lena Maier-Hein, Carsten Rother, Ullrich Köthe </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* Different way to train a normalizing flow for amortized posterior inference with respect to Radev et al. 2021.
+{% endcapture %}{{ x | markdownify }}
+</div>
  <hr/>
 </div>
 <!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
@@ -396,6 +510,54 @@ layout: default
 <div class="collapse" id="collapse{{ id }}">
 {% capture x %}
 * [Code](https://github.com/mackelab/delfi)
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Efficient Amortised Bayesian Inference for Hierarchical and Nonlinear Dynamical Systems
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/1905.12090" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> October, 2019 </span>
+          <span class="authors"> Geoffrey Roeder, Paul K. Grant, Andrew Phillips, Neil Dalchau, Edward Meeds </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		autoencoders 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/Microsoft/vi-hds)
+* Use variational inference to train autoencoders for posterior inference.
 {% endcapture %}{{ x | markdownify }}
 </div>
  <hr/>
@@ -523,7 +685,7 @@ layout: default
 	<div class="row">
 		<div id="bloc2">
           <span class="dates"> March 13, 2020 </span>
-          <span class="authors"> Stefan T. Radev, Ulf K. Mertens, Andreass Voss, Lynton Ardizzone, Ullrich Köthe </span>
+          <span class="authors"> Stefan T. Radev, Ulf K. Mertens, Andreas Voss, Lynton Ardizzone, Ullrich Köthe </span>
     		</div>
 	</div>
     <div class="row">
@@ -889,6 +1051,55 @@ layout: default
 	<div class="row">
 	  <div class="column1" >
 {% capture x %}
+## Amortized Bayesian model comparison with evidential deep learning
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/2004.10629" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> March, 2021 </span>
+          <span class="authors"> Stefan T. Radev, Marco D'Alessandro, Ulf K. Mertens, Andreas Voss, Ullrich Köthe, Paul-Christian Bürkner </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		model-evidence 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		classifier-NN 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		- 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/stefanradev93/BayesFlow)
+* Way to perform model selection using a NN to estimate the model evidence
+* Amortized over the different models, so that they do not need to be fit to the data independently
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
 ## MINIMALIST: Mutual INformatIon Maximization for Amortized Likelihood Inference from Sampled Trajectories
     {% endcapture %}{{ x | markdownify }}
 	  </div>
@@ -1228,7 +1439,7 @@ layout: default
 	<div class="row">
 	  <div class="column1" >
 {% capture x %}
-## BayesFlow Can Reliably Detect Model Misspecification and Posterior Errors in Amortized Bayesian Inference
+## Detecting Model Misspecification in Amortized Bayesian Inference with Neural Networks
     {% endcapture %}{{ x | markdownify }}
 	  </div>
 	  <div class="column2" >

@@ -303,7 +303,7 @@
     "sequential": "no",
     "other": [
       "[Code](https://github.com/marvinschmitt/ModelMisspecificationBF)",
-      "They modify the original BayesFlow approach (Radev et al. 2020, see above) to somehow handle and diagnose model misspecification, using MMD."
+      "They add probabilistic structure to learned summary statistics to detect model misspecification with MMD, e.g. for APT/SNPE-C (Greenberg et al., 2019) or BayesFlow (Radev et al., 2020)."
     ],
     "link": "https://arxiv.org/abs/2112.08866"
   },

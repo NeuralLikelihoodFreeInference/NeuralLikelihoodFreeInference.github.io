@@ -1391,6 +1391,54 @@ layout: default
 	<div class="row">
 	  <div class="column1" >
 {% capture x %}
+## Detecting Model Misspecification in Amortized Bayesian Inference with Neural Networks
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/2112.08866" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> December 16, 2021 </span>
+          <span class="authors"> Marvin Schmitt, Paul-Christian Bürkner, Ullrich Köthe, Stefan T. Radev </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/marvinschmitt/ModelMisspecificationBF)
+* They add probabilistic structure to learned summary statistics to detect model misspecification with MMD, e.g. for APT/SNPE-C (Greenberg et al., 2019) or BayesFlow (Radev et al., 2020).
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
 ## HNPE: Leveraging Global Parameters for Neural Posterior Estimation
     {% endcapture %}{{ x | markdownify }}
 	  </div>
@@ -1428,54 +1476,6 @@ layout: default
 {% capture x %}
 * [Code](https://github.com/plcrodrigues/HNPE)
 * They extend LFI methods using normalizing flows for Bayesian hierarchical models.
-{% endcapture %}{{ x | markdownify }}
-</div>
- <hr/>
-</div>
-<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
-        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
-{% assign id = id | plus:1 %}
-<div class="entry">
-	<div class="row">
-	  <div class="column1" >
-{% capture x %}
-## Detecting Model Misspecification in Amortized Bayesian Inference with Neural Networks
-    {% endcapture %}{{ x | markdownify }}
-	  </div>
-	  <div class="column2" >
-	    <div id="block_container">
-		<div id="bloc2">
- 		<a href="https://arxiv.org/abs/2112.08866" target="_blank" class="btn btn-info" role="button"> Paper </a>
-		</div>
-		<div id="bloc3">
-		     <p>
-		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
-				See More
-		      </button>
-		    </p>
-		</div>
-	     </div>
-	  </div>
-	</div>
-	<div class="row">
-		<div id="bloc2">
-          <span class="dates"> December 16, 2021 </span>
-          <span class="authors"> Marvin Schmitt, Paul-Christian Bürkner, Ullrich Köthe, Stefan T. Radev </span>
-    		</div>
-	</div>
-    <div class="row">
-		<div id="bloc2">
-	  	<span class="label_first">   Target: 		  </span>
-        <span class="target"> 		posterior 	 </span>
-  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
-  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		direct 	 </span>
-  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
-    	</div>
-	</div>
-<div class="collapse" id="collapse{{ id }}">
-{% capture x %}
-* [Code](https://github.com/marvinschmitt/ModelMisspecificationBF)
-* They modify the original BayesFlow approach (Radev et al. 2020, see above) to somehow handle and diagnose model misspecification, using MMD.
 {% endcapture %}{{ x | markdownify }}
 </div>
  <hr/>

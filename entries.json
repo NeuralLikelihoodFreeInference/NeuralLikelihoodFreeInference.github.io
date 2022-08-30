@@ -601,5 +601,44 @@
       "Use variational inference to train autoencoders for posterior inference."
     ],
     "link": "https://arxiv.org/abs/1905.12090"
+  },
+  {
+    "authors": [
+      "Yuexi Wang",
+      "Veronika Rockova"
+    ],
+    "title": "Adversarial Bayesian Simulation",
+    "date": "August 25, 2022",
+    "target": [
+      "posterior"
+    ],
+    "nn": "generative-NN",
+    "samples": "direct",
+    "sequential": "yes",
+    "other": [
+      "Uses Generative Adversarial Networks to represent the posterior.",
+      "Similar setup to Ramesh et al. 2022, but uses Wasserstein GANs instead of vanilla GANs and provides more theoretical insights."
+    ],
+    "link": "https://arxiv.org/abs/2208.12113"
+  },
+  {
+    "authors": [
+      "Arnaud Delaunoy",
+      "Joeri Hermans",
+      "François Rozet",
+      "Antoine Wehenkel",
+      "Gilles Louppe"
+    ],
+    "title": "Towards Reliable Simulation-Based Inference with Balanced Neural Ratio Estimation",
+    "date": "August 29, 2022",
+    "target": "likelihood-ratio",
+    "nn": "classifier-NN",
+    "samples": "MCMC",
+    "sequential": "no",
+    "other": [
+      "[Code](https://github.com/montefiore-ai/balanced-nre)",
+      "Builds on the likelihood-ratio approach by Hermans et al. 2019 introducing an additional loss term which lead to conservative (instead of overconfident) posterior estimates with small amount of data hence avoiding false conclusions. The learned target converges to the exact posterior as the data size increases."
+    ],
+    "link": "https://arxiv.org/abs/2208.13624"
   }
 ]

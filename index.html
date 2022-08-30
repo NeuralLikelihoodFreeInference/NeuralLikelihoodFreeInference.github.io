@@ -12,7 +12,9 @@ layout: default
 <option>Andreas Hellander</option>
 <option>Andreas Voss</option>
 <option>Andrew Phillips</option>
+<option>Antoine Wehenkel</option>
 <option>Armita Nourmohammad</option>
+<option>Arnaud Delaunoy</option>
 <option>Arnaud Doucet</option>
 <option>Bernhard Schölkopf</option>
 <option>Carsten Rother</option>
@@ -87,7 +89,9 @@ layout: default
 <option>Ullrich Köthe</option>
 <option>Umberto Picchini</option>
 <option>Valentin De Bortoli</option>
+<option>Veronika Rockova</option>
 <option>Volodimir Begy</option>
+<option>Yuexi Wang</option>
 <option>Yuyang Shi</option>
 <option>Álvaro Tejero-Cantero</option>
     </select>
@@ -1571,6 +1575,102 @@ layout: default
 {% capture x %}
 * [Code](https://github.com/LoryPack/LFI_gen_networks_Scoring_Rules)
 * Same setup as Ramesh et al., but training the generative network via scoring rule minimization rather than adversarial training.
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Adversarial Bayesian Simulation
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/2208.12113" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> August 25, 2022 </span>
+          <span class="authors"> Yuexi Wang, Veronika Rockova </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		generative-NN 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* Uses Generative Adversarial Networks to represent the posterior.
+* Similar setup to Ramesh et al. 2022, but uses Wasserstein GANs instead of vanilla GANs and provides more theoretical insights.
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Towards Reliable Simulation-Based Inference with Balanced Neural Ratio Estimation
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/2208.13624" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> August 29, 2022 </span>
+          <span class="authors"> Arnaud Delaunoy, Joeri Hermans, François Rozet, Antoine Wehenkel, Gilles Louppe </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		likelihood-ratio 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		classifier-NN 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		MCMC 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/montefiore-ai/balanced-nre)
+* Builds on the likelihood-ratio approach by Hermans et al. 2019 introducing an additional loss term which lead to conservative (instead of overconfident) posterior estimates with small amount of data hence avoiding false conclusions. The learned target converges to the exact posterior as the data size increases.
 {% endcapture %}{{ x | markdownify }}
 </div>
  <hr/>

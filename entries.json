@@ -640,5 +640,23 @@
       "Builds on the likelihood-ratio approach by Hermans et al. 2019 introducing an additional loss term which lead to conservative (instead of overconfident) posterior estimates with small amount of data hence avoiding false conclusions. The learned target converges to the exact posterior as the data size increases."
     ],
     "link": "https://arxiv.org/abs/2208.13624"
+  },
+  {
+    "authors": [
+      "Patrick Cannon",
+      "Daniel Ward",
+      "Sebastian M. Schmon"
+    ],
+    "title": "Investigating the Impact of Model Misspecification in Neural Simulation-based Inference",
+    "date": "September 5, 2022",
+    "target": ["likelihood", "posterior", "likelihood-ratio"],
+    "nn": "normalizing-flows",
+    "samples": ["MCMC", "direct"],
+    "sequential": "yes",
+    "other": [
+      "They empirically test the performance of neural likelihood-free inference methods with misspecified models, finding that performance is not robust",
+      "They investigate mitigation strategies such as ensemble posteriors and sharpness-aware minimization"
+    ],
+    "link": "https://arxiv.org/abs/2209.01845"
   }
 ]

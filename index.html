@@ -20,6 +20,7 @@ layout: default
 <option>Carsten Rother</option>
 <option>Conor Durkan</option>
 <option>Daniel Rahner</option>
+<option>Daniel Ward</option>
 <option>David C. Sterratt</option>
 <option>David M. Blei</option>
 <option>David S. Greenberg</option>
@@ -64,6 +65,7 @@ layout: default
 <option>Michael J Frank</option>
 <option>Natanael Spisak</option>
 <option>Neil Dalchau</option>
+<option>Patrick Cannon</option>
 <option>Paul K. Grant</option>
 <option>Paul-Christian Bürkner</option>
 <option>Pedro J. Gonçalves</option>
@@ -76,6 +78,7 @@ layout: default
 <option>Ritabrata Dutta</option>
 <option>Robin Eriksson</option>
 <option>Samuel Wiqvist</option>
+<option>Sebastian M. Schmon</option>
 <option>Sebastian Wirkert</option>
 <option>Song Liu</option>
 <option>Stefan Engblom</option>
@@ -1395,54 +1398,6 @@ layout: default
 	<div class="row">
 	  <div class="column1" >
 {% capture x %}
-## Detecting Model Misspecification in Amortized Bayesian Inference with Neural Networks
-    {% endcapture %}{{ x | markdownify }}
-	  </div>
-	  <div class="column2" >
-	    <div id="block_container">
-		<div id="bloc2">
- 		<a href="https://arxiv.org/abs/2112.08866" target="_blank" class="btn btn-info" role="button"> Paper </a>
-		</div>
-		<div id="bloc3">
-		     <p>
-		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
-				See More
-		      </button>
-		    </p>
-		</div>
-	     </div>
-	  </div>
-	</div>
-	<div class="row">
-		<div id="bloc2">
-          <span class="dates"> December 16, 2021 </span>
-          <span class="authors"> Marvin Schmitt, Paul-Christian Bürkner, Ullrich Köthe, Stefan T. Radev </span>
-    		</div>
-	</div>
-    <div class="row">
-		<div id="bloc2">
-	  	<span class="label_first">   Target: 		  </span>
-        <span class="target"> 		posterior 	 </span>
-  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
-  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		direct 	 </span>
-  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
-    	</div>
-	</div>
-<div class="collapse" id="collapse{{ id }}">
-{% capture x %}
-* [Code](https://github.com/marvinschmitt/ModelMisspecificationBF)
-* They add probabilistic structure to learned summary statistics to detect model misspecification with MMD, e.g. for APT/SNPE-C (Greenberg et al., 2019) or BayesFlow (Radev et al., 2020).
-{% endcapture %}{{ x | markdownify }}
-</div>
- <hr/>
-</div>
-<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
-        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
-{% assign id = id | plus:1 %}
-<div class="entry">
-	<div class="row">
-	  <div class="column1" >
-{% capture x %}
 ## HNPE: Leveraging Global Parameters for Neural Posterior Estimation
     {% endcapture %}{{ x | markdownify }}
 	  </div>
@@ -1480,6 +1435,54 @@ layout: default
 {% capture x %}
 * [Code](https://github.com/plcrodrigues/HNPE)
 * They extend LFI methods using normalizing flows for Bayesian hierarchical models.
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Detecting Model Misspecification in Amortized Bayesian Inference with Neural Networks
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/2112.08866" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> December 16, 2021 </span>
+          <span class="authors"> Marvin Schmitt, Paul-Christian Bürkner, Ullrich Köthe, Stefan T. Radev </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/marvinschmitt/ModelMisspecificationBF)
+* They add probabilistic structure to learned summary statistics to detect model misspecification with MMD, e.g. for APT/SNPE-C (Greenberg et al., 2019) or BayesFlow (Radev et al., 2020).
 {% endcapture %}{{ x | markdownify }}
 </div>
  <hr/>
@@ -1671,6 +1674,54 @@ layout: default
 {% capture x %}
 * [Code](https://github.com/montefiore-ai/balanced-nre)
 * Builds on the likelihood-ratio approach by Hermans et al. 2019 introducing an additional loss term which lead to conservative (instead of overconfident) posterior estimates with small amount of data hence avoiding false conclusions. The learned target converges to the exact posterior as the data size increases.
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Investigating the Impact of Model Misspecification in Neural Simulation-based Inference
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/2209.01845" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> September 5, 2022 </span>
+          <span class="authors"> Patrick Cannon, Daniel Ward, Sebastian M. Schmon </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		likelihood, posterior, likelihood-ratio 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		MCMC, direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* They empirically test the performance of neural likelihood-free inference methods with misspecified models, finding that performance is not robust
+* They investigate mitigation strategies such as ensemble posteriors and sharpness-aware minimization
 {% endcapture %}{{ x | markdownify }}
 </div>
  <hr/>

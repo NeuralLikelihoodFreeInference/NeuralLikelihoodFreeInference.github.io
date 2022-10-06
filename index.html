@@ -12,6 +12,7 @@ layout: default
 <option>Andreas Hellander</option>
 <option>Andreas Voss</option>
 <option>Andrew Phillips</option>
+<option>Andriy Mnih</option>
 <option>Antoine Wehenkel</option>
 <option>Armita Nourmohammad</option>
 <option>Arnaud Delaunoy</option>
@@ -87,6 +88,7 @@ layout: default
 <option>Theofanis Karaletsos</option>
 <option>Thierry Mora</option>
 <option>Thomas Moreau</option>
+<option>Tomas Geffner</option>
 <option>Tony Chen</option>
 <option>Ulf K. Mertens</option>
 <option>Ullrich Köthe</option>
@@ -130,7 +132,7 @@ layout: default
 <option>any-NN</option>
 <option>generative-NN</option>
 <option>Bayesian-NN</option>
-<option>denoising-diffusion-model</option>
+<option>score-network</option>
 <option>autoencoders</option>
     </select>
   </span>
@@ -1522,7 +1524,7 @@ layout: default
 		<div id="bloc2">
 	  	<span class="label_first">   Target: 		  </span>
         <span class="target"> 		posterior 	 </span>
-  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		denoising-diffusion-model 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		score-network 	 </span>
   	<span class="label">   Samples: 		  </span>        <span class="samples"> 		direct 	 </span>
   	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
     	</div>
@@ -1722,6 +1724,54 @@ layout: default
 {% capture x %}
 * They empirically test the performance of neural likelihood-free inference methods with misspecified models, finding that performance is not robust
 * They investigate mitigation strategies such as ensemble posteriors and sharpness-aware minimization
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Score Modeling for Simulation-based Inference
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/2209.14249" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> September 28, 2022 </span>
+          <span class="authors"> Tomas Geffner, George Papamakarios, Andriy Mnih </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		score-network 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* They use diffusion score models to approximate the posterior distribution
+* The network is trained on pairs of parameter and simulations, but it allows to sample from the posterior for an arbitrary number of simulations
 {% endcapture %}{{ x | markdownify }}
 </div>
  <hr/>

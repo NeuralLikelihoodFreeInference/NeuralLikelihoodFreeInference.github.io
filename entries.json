@@ -278,7 +278,7 @@
     "target": [
       "posterior"
     ],
-    "nn": "denoising-diffusion-model",
+    "nn": "score-network",
     "samples": "direct",
     "sequential": "no",
     "other": [
@@ -658,5 +658,21 @@
       "They investigate mitigation strategies such as ensemble posteriors and sharpness-aware minimization"
     ],
     "link": "https://arxiv.org/abs/2209.01845"
+  },
+  {
+    "authors": [
+      "Tomas Geffner", "George Papamakarios", "Andriy Mnih"
+    ],
+    "title": "Score Modeling for Simulation-based Inference",
+    "date": "September 28, 2022",
+    "target": "posterior",
+    "nn": "score-network",
+    "samples": ["direct"],
+    "sequential": "no",
+    "other": [
+      "They use diffusion score models to approximate the posterior distribution",
+      "The network is trained on pairs of parameter and simulations, but it allows to sample from the posterior for an arbitrary number of simulations"
+    ],
+    "link": "https://arxiv.org/abs/2209.14249"
   }
 ]

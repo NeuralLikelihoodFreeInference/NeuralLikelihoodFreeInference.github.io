@@ -675,4 +675,23 @@
     ],
     "link": "https://arxiv.org/abs/2209.14249"
   }
+,
+  {
+    "authors": [
+      "Daniel Ward", "Patrick Cannon", "Mark Beaumont", "Matteo Fasiolo", "Sebastian M. Schmon"
+    ],
+    "title": "Robust Neural Posterior Estimation and Statistical Model Criticism",
+    "date": "October 12, 2022",
+    "target": "posterior",
+    "nn": "normalizing-flows",
+    "samples": ["MCMC"],
+    "sequential": "no",
+    "other": [
+      "They show Neural Posterior Estimation (NPE) performs poorly under model misspecification.",
+      "As a remedy, they develop a framework incluyding a model criticism and a robust inference components, by explicitly modelling the discrepancy between simulations and observations.",
+      "Their framework requires an MCMC.",
+      "[Code](https://github.com/danielward27/rnpe)"
+    ],
+    "link": "https://arxiv.org/abs/2210.06564"
+  }
 ]

@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-This page is maintained by [Lorenzo Pacchiardi](https://lorypack.github.io/). The website is generated from [this repository](https://github.com/NeuralLikelihoodFreeInference/NeuralLikelihoodFreeInference.github.io), which is a fork of [this other repository](https://github.com/ScoreBasedGenerativeModeling/scorebasedgenerativemodeling.github.io). 
+This website is maintained by [Lorenzo Pacchiardi](https://lorypack.github.io/). The website is generated from [this repository](https://github.com/NeuralLikelihoodFreeInference/NeuralLikelihoodFreeInference.github.io), which is a fork of [this other repository](https://github.com/ScoreBasedGenerativeModeling/scorebasedgenerativemodeling.github.io). 
 
 ## Contribute
 

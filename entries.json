@@ -649,9 +649,16 @@
     ],
     "title": "Investigating the Impact of Model Misspecification in Neural Simulation-based Inference",
     "date": "September 5, 2022",
-    "target": ["likelihood", "posterior", "likelihood-ratio"],
+    "target": [
+      "likelihood",
+      "posterior",
+      "likelihood-ratio"
+    ],
     "nn": "normalizing-flows",
-    "samples": ["MCMC", "direct"],
+    "samples": [
+      "MCMC",
+      "direct"
+    ],
     "sequential": "yes",
     "other": [
       "They empirically test the performance of neural likelihood-free inference methods with misspecified models, finding that performance is not robust",
@@ -661,30 +668,39 @@
   },
   {
     "authors": [
-      "Tomas Geffner", "George Papamakarios", "Andriy Mnih"
+      "Tomas Geffner",
+      "George Papamakarios",
+      "Andriy Mnih"
     ],
     "title": "Score Modeling for Simulation-based Inference",
     "date": "September 28, 2022",
     "target": "posterior",
     "nn": "score-network",
-    "samples": ["direct"],
+    "samples": [
+      "direct"
+    ],
     "sequential": "no",
     "other": [
       "They use diffusion score models to approximate the posterior distribution",
       "The network is trained on pairs of parameter and simulations, but it allows to sample from the posterior for an arbitrary number of simulations"
     ],
     "link": "https://arxiv.org/abs/2209.14249"
-  }
-,
+  },
   {
     "authors": [
-      "Daniel Ward", "Patrick Cannon", "Mark Beaumont", "Matteo Fasiolo", "Sebastian M. Schmon"
+      "Daniel Ward",
+      "Patrick Cannon",
+      "Mark Beaumont",
+      "Matteo Fasiolo",
+      "Sebastian M. Schmon"
     ],
     "title": "Robust Neural Posterior Estimation and Statistical Model Criticism",
     "date": "October 12, 2022",
     "target": "posterior",
     "nn": "normalizing-flows",
-    "samples": ["MCMC"],
+    "samples": [
+      "MCMC"
+    ],
     "sequential": "no",
     "other": [
       "They show Neural Posterior Estimation (NPE) performs poorly under model misspecification.",
@@ -693,5 +709,101 @@
       "[Code](https://github.com/danielward27/rnpe)"
     ],
     "link": "https://arxiv.org/abs/2210.06564"
+  },
+  {
+    "authors": [
+      "Kyoungchul Kong",
+      "Konstantin T. Matchev",
+      "Stephen Mrenna",
+      "Prasanth Shyamsundar"
+    ],
+    "title": "New Machine Learning Techniques for Simulation-Based Inference: InferoStatic Nets, Kernel Score Estimation, and Kernel Likelihood Ratio Estimation",
+    "date": "October 4, 2022",
+    "target": ["likelihood-ratio", "score"],
+    "nn": "??",
+    "samples": [
+      "??"
+    ],
+    "sequential": "??",
+    "other": [
+      "They introduce three different strategies, based on kernels and a scalar function called the inferostatic potential."
+    ],
+    "link": "https://arxiv.org/abs/2210.01680"
+  },
+  {
+    "authors": [
+      "Michael Deistler",
+      "Pedro J. Goncalves",
+      "Jakob H. Macke"
+    ],
+    "title": "Truncated proposals for scalable and hassle-free simulation-based inference",
+    "date": "October 10, 2022",
+    "target": "posterior",
+    "nn": "normalizing-flows",
+    "samples": [
+      "direct"
+    ],
+    "sequential": "yes",
+    "other": [
+      "Performs sequential inference with truncated proposals, sidestepping the optimisation issues of alternative approaches.",
+      "[Code](https://github.com/tsnpeNeurips)"
+    ],
+    "link": "https://arxiv.org/abs/2210.04815"
+  },
+  {
+    "authors": [
+      "Ramis Khabibullin",
+      "Sergei Seleznev"
+    ],
+    "title": "Fast Estimation of Bayesian State Space Models Using Amortized Simulation-Based Inference",
+    "date": "October 13, 2022",
+    "target": "posterior",
+    "nn": "any-NN",
+    "samples": [
+      "direct"
+    ],
+    "sequential": "no",
+    "other": [
+      "Concentrates on the setting of Bayesian state-space models, by learning some marginals of the posterior directly",
+      "They use a normal approximation and learn the mean and standard deviation."
+    ],
+    "link": "https://arxiv.org/abs/2210.07154"
+  },
+  {
+    "authors": [
+      "Louis Sharrock", "Jack Simons", "Song Liu", "Mark Beaumont"
+    ],
+    "title": "Sequential Neural Score Estimation: Likelihood-Free Inference with Conditional Score Based Diffusion Models",
+    "date": "October 10, 2022",
+    "target": ["likelihood", "posterior"],
+    "nn": "score-network",
+    "samples": [
+      "direct", "MCMC"
+    ],
+    "sequential": "yes",
+    "other": [
+      "They introduce sequential algorithms to learn both the likelihood and the posterior using score-based networks."
+    ],
+    "link": "https://arxiv.org/abs/2210.04872"
+  },
+  {
+    "authors": [
+      "Pierre Glaser", "Michael Arbel", "Arnaud Doucet", "Arthur Gretton"
+    ],
+    "title": "Maximum Likelihood Learning of Energy-Based Models for Simulation-Based Inference",
+    "date": "October 26, 2022",
+    "target": "likelihood",
+    "nn": "any-NN",
+    "samples": [
+      "MCMC"
+    ],
+    "sequential": "yes",
+    "other": [
+      "They exploit energy-based models to learn likelihood, in both an amortized and sequential framework",
+      "Their approach is similar to Pacchiardi and Dutta 2022, but they rely on an advanced Maximum Likelihood approach to tune the energy-based model.",
+      "They are also able to exploit standard MCMC for sampling from the amortized version (in contrast to MCMC for doubly-intractable targets needed by Pacchiard and Dutta, 2022, and by the sequential approach).",
+      "[Code](https://github.com/pierreglaser/unle)"
+    ],
+    "link": "https://arxiv.org/abs/2210.14756"
   }
 ]

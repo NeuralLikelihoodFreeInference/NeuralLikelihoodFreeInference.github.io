@@ -6,6 +6,7 @@ layout: default
     <span>Authors: </span>
     <select id="authorselection" class="selectpicker" multiple data-live-search="true">
 <option>Aleksandra M. Walczak</option>
+<option>Alex Cole</option>
 <option>Alexander Fengler</option>
 <option>Alexandre Gramfort</option>
 <option>Alvaro Tejero-Cantero</option>
@@ -18,8 +19,10 @@ layout: default
 <option>Arnaud Delaunoy</option>
 <option>Arnaud Doucet</option>
 <option>Arthur Gretton</option>
+<option>Benjamin Kurt Miller</option>
 <option>Bernhard Schölkopf</option>
 <option>Carsten Rother</option>
+<option>Christoph Weniger</option>
 <option>Conor Durkan</option>
 <option>Daniel Rahner</option>
 <option>Daniel Ward</option>
@@ -29,6 +32,7 @@ layout: default
 <option>Dustin Tran</option>
 <option>Edward Meeds</option>
 <option>Eric W. Pellegrini</option>
+<option>Francesco Nattino</option>
 <option>François Rozet</option>
 <option>Fredrik Wrede</option>
 <option>Geoff Nicholls</option>
@@ -67,12 +71,15 @@ layout: default
 <option>Marvin Schmitt</option>
 <option>Matteo Fasiolo</option>
 <option>Maximilian Dax</option>
+<option>Meiert W Grootes</option>
 <option>Michael Arbel</option>
 <option>Michael Deistler</option>
 <option>Michael J Frank</option>
 <option>Natanael Spisak</option>
 <option>Neil Dalchau</option>
+<option>Ou Ku</option>
 <option>Patrick Cannon</option>
+<option>Patrick Forré</option>
 <option>Paul K. Grant</option>
 <option>Paul-Christian Bürkner</option>
 <option>Pedro J. Goncalves</option>
@@ -158,6 +165,8 @@ layout: default
 <option>Stein Variational Gradient Descent</option>
 <option>-</option>
 <option>??</option>
+<option>rejection</option>
+<option>importance</option>
 </select>
   </span>
   <span class="selector">
@@ -833,6 +842,55 @@ layout: default
 	<div class="row">
 	  <div class="column1" >
 {% capture x %}
+## Simulation-efficient marginal posterior estimation with swyft: stop wasting your precious time
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/2011.13951" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> November 27, 2020 </span>
+          <span class="authors"> Benjamin Kurt Miller, Alex Cole, Gilles Louppe, Christoph Weniger </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		likelihood-ratio 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		any-NN 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		MCMC, rejection, importance 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* Explored truncation and estimating marginals as an options to increase simulation-effiency
+* Expanded upon in Truncated Marginal Neural Ratio Estimation
+* This version of swyft has the code [code](https://github.com/undark-lab/swyft/releases/tag/v0.1.2)
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
 ## Likelihood approximation networks (LANs) for fast inference of simulation models in cognitive neuroscience
     {% endcapture %}{{ x | markdownify }}
 	  </div>
@@ -1172,6 +1230,56 @@ layout: default
 	<div class="row">
 	  <div class="column1" >
 {% capture x %}
+## Truncated Marginal Neural Ratio Estimation
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/2107.01214" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> July 2, 2021 </span>
+          <span class="authors"> Benjamin Kurt Miller, Alex Cole, Patrick Forré, Gilles Louppe, Christoph Weniger </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		likelihood-ratio 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		any-NN 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		MCMC, rejection, importance 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* Introduced a truncation scheme which can be tested for calibration to the prior, despite being sequential. Other sequential methods cannot be tested for calibration.
+* Introduced a technique of estimating necessary partially marginalized posterior distributions to increase simulation efficiency.
+* [Code](https://github.com/bkmi/tmnre)
+* Also see [general implementation](https://github.com/undark-lab/swyft)
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
 ## GATSBI: Generative Adversarial Training for Simulation-Based Inference
     {% endcapture %}{{ x | markdownify }}
 	  </div>
@@ -1416,54 +1524,6 @@ layout: default
 	<div class="row">
 	  <div class="column1" >
 {% capture x %}
-## Detecting Model Misspecification in Amortized Bayesian Inference with Neural Networks
-    {% endcapture %}{{ x | markdownify }}
-	  </div>
-	  <div class="column2" >
-	    <div id="block_container">
-		<div id="bloc2">
- 		<a href="https://arxiv.org/abs/2112.08866" target="_blank" class="btn btn-info" role="button"> Paper </a>
-		</div>
-		<div id="bloc3">
-		     <p>
-		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
-				See More
-		      </button>
-		    </p>
-		</div>
-	     </div>
-	  </div>
-	</div>
-	<div class="row">
-		<div id="bloc2">
-          <span class="dates"> December 16, 2021 </span>
-          <span class="authors"> Marvin Schmitt, Paul-Christian Bürkner, Ullrich Köthe, Stefan T. Radev </span>
-    		</div>
-	</div>
-    <div class="row">
-		<div id="bloc2">
-	  	<span class="label_first">   Target: 		  </span>
-        <span class="target"> 		posterior 	 </span>
-  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
-  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		direct 	 </span>
-  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
-    	</div>
-	</div>
-<div class="collapse" id="collapse{{ id }}">
-{% capture x %}
-* [Code](https://github.com/marvinschmitt/ModelMisspecificationBF)
-* They add probabilistic structure to learned summary statistics to detect model misspecification with MMD, e.g. for APT/SNPE-C (Greenberg et al., 2019) or BayesFlow (Radev et al., 2020).
-{% endcapture %}{{ x | markdownify }}
-</div>
- <hr/>
-</div>
-<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
-        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
-{% assign id = id | plus:1 %}
-<div class="entry">
-	<div class="row">
-	  <div class="column1" >
-{% capture x %}
 ## HNPE: Leveraging Global Parameters for Neural Posterior Estimation
     {% endcapture %}{{ x | markdownify }}
 	  </div>
@@ -1501,6 +1561,54 @@ layout: default
 {% capture x %}
 * [Code](https://github.com/plcrodrigues/HNPE)
 * They extend LFI methods using normalizing flows for Bayesian hierarchical models.
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Detecting Model Misspecification in Amortized Bayesian Inference with Neural Networks
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/2112.08866" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> December 16, 2021 </span>
+          <span class="authors"> Marvin Schmitt, Paul-Christian Bürkner, Ullrich Köthe, Stefan T. Radev </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/marvinschmitt/ModelMisspecificationBF)
+* They add probabilistic structure to learned summary statistics to detect model misspecification with MMD, e.g. for APT/SNPE-C (Greenberg et al., 2019) or BayesFlow (Radev et al., 2020).
 {% endcapture %}{{ x | markdownify }}
 </div>
  <hr/>
@@ -1596,6 +1704,54 @@ layout: default
 {% capture x %}
 * [Code](https://github.com/LoryPack/LFI_gen_networks_Scoring_Rules)
 * Same setup as Ramesh et al., but training the generative network via scoring rule minimization rather than adversarial training.
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## swyft: Truncated Marginal Neural Ratio Estimation in Python
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://joss.theoj.org/papers/10.21105/joss.04205" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> July 19, 2022 </span>
+          <span class="authors"> Benjamin Kurt Miller, Alex Cole, Christoph Weniger, Francesco Nattino, Ou Ku, Meiert W Grootes </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		likelihood-ratio 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		any-NN 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		MCMC, rejection, importance 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* Created a flexible and general purpose simulation-based inference package which uses Truncated Marginal Neural Ratio Estimation.
+* [Toolbox](https://github.com/undark-lab/swyft/)
 {% endcapture %}{{ x | markdownify }}
 </div>
  <hr/>
@@ -2078,6 +2234,55 @@ layout: default
 * Their approach is similar to Pacchiardi and Dutta 2022, but they rely on an advanced Maximum Likelihood approach to tune the energy-based model.
 * They are also able to exploit standard MCMC for sampling from the amortized version (in contrast to MCMC for doubly-intractable targets needed by Pacchiard and Dutta, 2022, and by the sequential approach).
 * [Code](https://github.com/pierreglaser/unle)
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## Contrastive Neural Ratio Estimation
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://arxiv.org/abs/2210.06170" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> November 27, 2022 </span>
+          <span class="authors"> Benjamin Kurt Miller, Christoph Weniger, Patrick Forré </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		likelihood-ratio 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		any-NN 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		MCMC 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* Generalization of Likelihood-free MCMC with Amortized Approximate Ratio Estimators and On Contrastive Learning for Likelihood-free Inference.
+* Multi-class ratio estimation but has returns exact likelihood-to-evidence ratio at optimum
+* [Code](https://github.com/bkmi/cnre)
 {% endcapture %}{{ x | markdownify }}
 </div>
  <hr/>

@@ -805,5 +805,87 @@
       "[Code](https://github.com/pierreglaser/unle)"
     ],
     "link": "https://arxiv.org/abs/2210.14756"
+  },
+  {
+    "authors": [
+      "Benjamin Kurt Miller", "Christoph Weniger", "Patrick Forré"
+    ],
+    "title": "Contrastive Neural Ratio Estimation",
+    "date": "November 27, 2022",
+    "target": "likelihood-ratio",
+    "nn": "any-NN",
+    "samples": [
+      "MCMC"
+    ],
+    "sequential": "no",
+    "other": [
+      "Generalization of Likelihood-free MCMC with Amortized Approximate Ratio Estimators and On Contrastive Learning for Likelihood-free Inference.",
+      "Multi-class ratio estimation but has returns exact likelihood-to-evidence ratio at optimum",
+      "[Code](https://github.com/bkmi/cnre)"
+    ],
+    "link": "https://arxiv.org/abs/2210.06170"
+  },
+  {
+    "authors": [
+      "Benjamin Kurt Miller", "Alex Cole", "Patrick Forré", "Gilles Louppe", "Christoph Weniger"
+    ],
+    "title": "Truncated Marginal Neural Ratio Estimation",
+    "date": "July 2, 2021",
+    "target": "likelihood-ratio",
+    "nn": "any-NN",
+    "samples": [
+      "MCMC",
+      "rejection",
+      "importance"
+    ],
+    "sequential": "yes",
+    "other": [
+      "Introduced a truncation scheme which can be tested for calibration to the prior, despite being sequential. Other sequential methods cannot be tested for calibration.",
+      "Introduced a technique of estimating necessary partially marginalized posterior distributions to increase simulation efficiency.",
+      "[Code](https://github.com/bkmi/tmnre)",
+      "Also see [general implementation](https://github.com/undark-lab/swyft)"
+    ],
+    "link": "https://arxiv.org/abs/2107.01214"
+  },
+  {
+    "authors": [
+      "Benjamin Kurt Miller", "Alex Cole", "Gilles Louppe", "Christoph Weniger"
+    ],
+    "title": "Simulation-efficient marginal posterior estimation with swyft: stop wasting your precious time",
+    "date": "November 27, 2020",
+    "target": "likelihood-ratio",
+    "nn": "any-NN",
+    "samples": [
+      "MCMC",
+      "rejection",
+      "importance"
+    ],
+    "sequential": "yes",
+    "other": [
+      "Explored truncation and estimating marginals as an options to increase simulation-effiency",
+      "Expanded upon in Truncated Marginal Neural Ratio Estimation",
+      "This version of swyft has the code [code](https://github.com/undark-lab/swyft/releases/tag/v0.1.2)"
+    ],
+    "link": "https://arxiv.org/abs/2011.13951"
+  },
+  {
+    "authors": [
+      "Benjamin Kurt Miller", "Alex Cole", "Christoph Weniger", "Francesco Nattino", "Ou Ku", "Meiert W Grootes"
+    ],
+    "title": "swyft: Truncated Marginal Neural Ratio Estimation in Python",
+    "date": "July 19, 2022",
+    "target": "likelihood-ratio",
+    "nn": "any-NN",
+    "samples": [
+      "MCMC",
+      "rejection",
+      "importance"
+    ],
+    "sequential": "yes",
+    "other": [
+      "Created a flexible and general purpose simulation-based inference package which uses Truncated Marginal Neural Ratio Estimation.",
+      "[Toolbox](https://github.com/undark-lab/swyft/)"
+    ],
+    "link": "https://joss.theoj.org/papers/10.21105/joss.04205"
   }
 ]

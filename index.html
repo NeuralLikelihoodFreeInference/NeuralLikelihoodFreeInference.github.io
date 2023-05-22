@@ -32,6 +32,7 @@ layout: default
 <option>Dustin Tran</option>
 <option>Edward Meeds</option>
 <option>Eric W. Pellegrini</option>
+<option>Erich Schikuta</option>
 <option>Francesco Nattino</option>
 <option>François Rozet</option>
 <option>Fredrik Wrede</option>
@@ -842,6 +843,55 @@ layout: default
 	<div class="row">
 	  <div class="column1" >
 {% capture x %}
+## Error-Guided Likelihood-Free MCMC
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://ieeexplore.ieee.org/abstract/document/9533611" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> October 13, 2020 </span>
+          <span class="authors"> Volodimir Begy, Erich Schikuta </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		likelihood-ratio 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		classifier-NN 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		MCMC 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		no 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* Enables parameter inference for observations that are a given distance away from the true observation
+* Use distance of 0 for vanilla inference
+* Handy in applications with high-dimensional observations
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
 ## Simulation-efficient marginal posterior estimation with swyft: stop wasting your precious time
     {% endcapture %}{{ x | markdownify }}
 	  </div>
@@ -1524,54 +1574,6 @@ layout: default
 	<div class="row">
 	  <div class="column1" >
 {% capture x %}
-## HNPE: Leveraging Global Parameters for Neural Posterior Estimation
-    {% endcapture %}{{ x | markdownify }}
-	  </div>
-	  <div class="column2" >
-	    <div id="block_container">
-		<div id="bloc2">
- 		<a href="https://proceedings.neurips.cc/paper/2021/hash/6fbd841e2e4b2938351a4f9b68f12e6b-Abstract.html" target="_blank" class="btn btn-info" role="button"> Paper </a>
-		</div>
-		<div id="bloc3">
-		     <p>
-		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
-				See More
-		      </button>
-		    </p>
-		</div>
-	     </div>
-	  </div>
-	</div>
-	<div class="row">
-		<div id="bloc2">
-          <span class="dates"> December, 2021 </span>
-          <span class="authors"> Pedro L. C. Rodrigues, Thomas Moreau, Gilles Louppe, Alexandre Gramfort </span>
-    		</div>
-	</div>
-    <div class="row">
-		<div id="bloc2">
-	  	<span class="label_first">   Target: 		  </span>
-        <span class="target"> 		posterior 	 </span>
-  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
-  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		direct 	 </span>
-  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
-    	</div>
-	</div>
-<div class="collapse" id="collapse{{ id }}">
-{% capture x %}
-* [Code](https://github.com/plcrodrigues/HNPE)
-* They extend LFI methods using normalizing flows for Bayesian hierarchical models.
-{% endcapture %}{{ x | markdownify }}
-</div>
- <hr/>
-</div>
-<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
-        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
-{% assign id = id | plus:1 %}
-<div class="entry">
-	<div class="row">
-	  <div class="column1" >
-{% capture x %}
 ## Detecting Model Misspecification in Amortized Bayesian Inference with Neural Networks
     {% endcapture %}{{ x | markdownify }}
 	  </div>
@@ -1609,6 +1611,54 @@ layout: default
 {% capture x %}
 * [Code](https://github.com/marvinschmitt/ModelMisspecificationBF)
 * They add probabilistic structure to learned summary statistics to detect model misspecification with MMD, e.g. for APT/SNPE-C (Greenberg et al., 2019) or BayesFlow (Radev et al., 2020).
+{% endcapture %}{{ x | markdownify }}
+</div>
+ <hr/>
+</div>
+<!--EndPost--------------------------------------------------------------------------------------------------------------------------------------------->
+        <!--Post--------------------------------------------------------------------------------------------------------------------------------------------->
+{% assign id = id | plus:1 %}
+<div class="entry">
+	<div class="row">
+	  <div class="column1" >
+{% capture x %}
+## HNPE: Leveraging Global Parameters for Neural Posterior Estimation
+    {% endcapture %}{{ x | markdownify }}
+	  </div>
+	  <div class="column2" >
+	    <div id="block_container">
+		<div id="bloc2">
+ 		<a href="https://proceedings.neurips.cc/paper/2021/hash/6fbd841e2e4b2938351a4f9b68f12e6b-Abstract.html" target="_blank" class="btn btn-info" role="button"> Paper </a>
+		</div>
+		<div id="bloc3">
+		     <p>
+		      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="collapse{{ id }}">
+				See More
+		      </button>
+		    </p>
+		</div>
+	     </div>
+	  </div>
+	</div>
+	<div class="row">
+		<div id="bloc2">
+          <span class="dates"> December, 2021 </span>
+          <span class="authors"> Pedro L. C. Rodrigues, Thomas Moreau, Gilles Louppe, Alexandre Gramfort </span>
+    		</div>
+	</div>
+    <div class="row">
+		<div id="bloc2">
+	  	<span class="label_first">   Target: 		  </span>
+        <span class="target"> 		posterior 	 </span>
+  	<span class="label">   Neural Network: 		  </span>        <span class="nn"> 		normalizing-flows 	 </span>
+  	<span class="label">   Samples: 		  </span>        <span class="samples"> 		direct 	 </span>
+  	<span class="label">   Sequential: 		  </span>        <span class="seq_am"> 		yes 	 </span>
+    	</div>
+	</div>
+<div class="collapse" id="collapse{{ id }}">
+{% capture x %}
+* [Code](https://github.com/plcrodrigues/HNPE)
+* They extend LFI methods using normalizing flows for Bayesian hierarchical models.
 {% endcapture %}{{ x | markdownify }}
 </div>
  <hr/>

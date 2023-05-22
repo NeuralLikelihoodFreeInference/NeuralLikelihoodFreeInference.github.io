@@ -887,5 +887,22 @@
       "[Toolbox](https://github.com/undark-lab/swyft/)"
     ],
     "link": "https://joss.theoj.org/papers/10.21105/joss.04205"
+  },
+  {
+    "authors": [
+      "Volodimir Begy", "Erich Schikuta"
+    ],
+    "title": "Error-Guided Likelihood-Free MCMC",
+    "date": "October 13, 2020",
+    "target": "likelihood-ratio",
+    "nn": "classifier-NN",
+    "samples": "MCMC",
+    "sequential": "no",
+    "other": [
+      "Enables parameter inference for observations that are a given distance away from the true observation",
+      "Use distance of 0 for vanilla inference",
+      "Handy in applications with high-dimensional observations"
+    ],
+    "link": "https://ieeexplore.ieee.org/abstract/document/9533611"
   }
 ]
